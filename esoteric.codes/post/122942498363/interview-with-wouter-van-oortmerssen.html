@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/122942498363/interview-with-wouter-van-oortmerssen by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview with Wouter van Oortmerssen</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Interview with Wouter van Oortmerssen
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-07-01">2015-07-01</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <figure class="tmblr-full" data-orig-height="682" data-orig-width="726"><img src="../../../78.media.tumblr.com/024257a7befb87b73ede252f97f78ca5/tumblr_inline_nqtapbPluJ1qaohdj_500.gif" data-orig-height="682" data-orig-width="726" alt="image" width="500" height="469"></figure><p><i>Wouter van Oortmerssen is a language designer responsible for the widely-used Amiga E, along with FALSE, the language which launched the esolang movement. Above is a screenshot of his beta for Aardappel, developed as part of his PhD thesis.</i></p><p><b>» First, tell me about the Amiga E language. Is this a project you took on yourself, or did you have institutional support?</b></p><p>Entirely by myself. I had written 2 compilers for simple procedural languages before it (one on the C16, one on the Amiga), both in Basic, and I had decided that the way to create a really awesome compiler would be to write one in assembly instead. That was the start of E. </p><p><b>» What was your approach for designing the language (and how did you decide which features you wanted from C++ vs Ada, etc)?</b> </p><p>The language design was actually very organic/incremental, and evolved as I learned more about programming languages. When I started I barely knew C &amp; Modula2, then I started puling in more OO functionality, and towards the end I was experimenting with more functional language features.</p><p><b>» How did you spread the word about the language (if you did), and how widely was it used?</b></p><p>Mostly by announcing it on usenet. That had a tight-knit community of Amiga programmers that was easy to reach. Then on Fish disks and Aminet as well. At some point, print magazines started to cover it with courses etc, and I got invited to speak at conferences about it. </p><p>It got fairly popular, to the point where at some point a popularity poll was held somewhere on the internets, and E came in second after C/C++, but before Pascal and Basic. Probably a biased sample, but still :)</p><p><b>» Do you remember your intentions when you set out to design FALSE?</b></p><p>Yes, initially my only goal was to try and make a “useful” language in as small an implementation as possible. I’ve always been obsessed with small/simple/fast (still am), and for me this was a fun diversion from the relative complexity of the E compiler.</p><p>I knew the language had to be based on Forth, as there’s no other language that has such simple parsing (it is mostly just a sequence of operations, little structure) and execution model (each operation simply takes from / adds to the stack).</p><p><b>» Why did you pick the odd syntax?</b></p><p>To keep it simple to parse, I knew that each operation had to be a single character. Then it dawned on me just how unreadable this language would become, and it was at that point that I thought it would be fun to use more obscure symbols to make it crazy looking on purpose. The idea that you could have a collection of random-looking symbols, and that it would actually be useful, and implemented using such a small compiler got me excited :)</p><p><b>» Was it also written all in assembly?</b></p><p>Yes, resulting in a 1024 byte executable :) </p><p><b>» While most esolangers are hobbyists, your PhD involved language design. Could you tell me a bit about those languages (Aardappel and Bla)?</b></p><p>Both these languages were more research projects, with Bla centered around first class environments (merging the concept of functions and objects) and Aardappel doing distributed computing with term rewriting and tuple spaces (using a novel graphical syntax). Both were endlessly more interesting than E, but lacked the very practical implementation that E had. </p><p><b>» FALSE influenced early esolangs like brainfuck and Befunge, which went on to inspire more, setting off the esolang movement. Did you have much interaction with esolangers (either during the Amiga era – not that they were called esolangers then – or more recently)?</b> </p><p>Back then yes. Me and Chris Pressey would email a lot, with him showing me his latest creations (I mostly went back to “serious” language design after FALSE :). There was also quite a bit of community around FALSE, with people making implementations in other languages/systems, or make dialects etc. There was actually quite a few people that made “useful” programs in FALSE.</p><p><b>» Do you follow what is happening now with such languages?</b></p><p>I keep up with esolangs only casually at the moment.. it has really exploded since way back when :)</p><p><b>» Also, when designing FALSE, were you aware of INTERCAL?</b> </p><p>I wasn’t, actually. As I described above, the obfuscated nature of FALSE was a secondary goal originally :)</p><p>Btw, you might be surprised to hear that after all these years, I am still working on programming languages :)</p><p>http://strlen.com/lobster</p><p><b>» For those of us who were not part of Amiga culture, could you tell us what Aminet is / was? How did one get projects onto Fish Disks, what kind of software would you find on one, etc?</b></p><p>Hah, I might not be the best to explain Amiga history, but I’ll do my best :) Fish disks were the main way to distribute public domain, open source, shareware etc. before the internet was wide-spread. People would send Fred Fish software, and he’d compile them into individual disks that people would copy. Magazines would have lots of companies that would allow you to order copies of these disks etc. He ended up creating over a 1000 disks this way. When cd-roms became a thing, you could order the whole collection on those. Those were strange times :)</p><p>Aminet was the most famous ftp-archive for amiga software. It was run by the same guy that made Brainfuck, Urban Müller. Rather than chronologically like fish disks, it was organized by topic, with readme’s for every file. You could upload to a staging area, and he’d put them in place. Much like fish disks, companies would print cd-roms with the latest from aminet for those not hooked up to the internets (or on 56k modems, which was most people). </p><p><b>» Do you think in assembler, or do you work out ideas in higher level languages and translate down?</b></p><p>Amiga E (91-97) was the last time I did serious programming in assembly. But having programmed so much in assembly certainly changed me as a programmer. Nowadays the bulk of my code is in C++, but I can still imagine the assembly underneath for any code I write, which I suppose allows me to write more efficient code. </p><p><b>» What was the take on FALSE at conferences? Were people mostly interested in its size? What sort of issues or ideas about programming came out in discussions of FALSE?</b></p><p>At conferences (e.g. IPISA) I was mostly speaking about Amiga E. FALSE was a fun side-project, it was only later that people thought it was important because it influenced so many others. </p><p><b>» What languages do you like to write in now?</b></p><p>For work, I’ve been using C++ as my main language for 20 years or so. It’s not necessarily the best language, but the better you understand it, the better it becomes, and I do really like writing efficient code. It is certainly very suitable for the kinds of things I have been writing (compilers, game engines, tools..), and more importantly, it is what people pay me to use :)</p><p>Nowadays my second biggest language is Lobster, which I use to write all my game prototypes, graphical experiments etc. It is much higher level than C++ and is a joy to work in. I’d like to use other higher level languages (I love Haskell and Prolog in particular), but it is hard to find places where I can put them to good use. I hope to eventually replace my need for C++ with something like Rust, or maybe I can manage to make Lobster efficient enough :) </p><p><b>» Lobster looks cool! Any games written in it yet we should check out?</b></p><p>Not much that has been released so far. There’s this little puzzle-RPG for example: http://strlen.com/avoid-the-monsters</p><p><b>» Is it important for programmers to understand low-level languages and assembly?</b><br></p><p>Much more important than most programmers think, even if you never end up using them in practical programming.</p><p>Imagine the car mechanic that knows to replace part 3123 when indicator light B goes on, but has no clue how an internal combustion engine really works, or the cook that can follow recipes but has no idea of the chemistry of what he’s doing. Both can do useful things, but neither will become a master in their craft, and the same goes for the programmer that does nothing but gluing objects together in Java.</p><p>More importantly, trying to learn low level concepts after you’ve already shaped your brain with high level thinking is hard and never quite “fits” anymore, whereas if you learn it first, all the layers above it become simpler. Assembly is easy to learn if you understand computer architecture. C is easy to learn if you know assembly. C++ is easy once you’ve mastered C. etc. But C++ will always be problematic if you started with Java, no matter how much time you spend with it. You miss all the building blocks.</p><p><b>» What advice do you have for people starting to experiment with language design?</b></p><p>Most “first languages” of people interested in language design end up much worse than existing languages. This is not a problem at all, since the biggest advice I could give anyone is to “just do it”, don’t be afraid of getting it wrong, you’ll get there by iteration, like everything else. It’s fun and you’ll learn a lot.</p><p>That said, if you’re interested in actually contributing to the space:</p><p>1) First broaden your mind with languages outside of your imperative/OO comfort zone. Learn Haskell, Scheme, Prolog, Icon, Self, and other “weird” languages to really get a sense of what’s possible in language design. Also look at what’s currently happening in the space to get a sense of what people are trying to address (e.g. Clojure, Rust..)</p><p>2) Make sure you’ve worked on really large software projects in teams, and have really felt the pain of software development. Your language should ideally try to make some aspect of software development easier for programmers, and you won’t know what that is from simple projects.</p>  </div>
+
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/122942498363/interview-with-wouter-van-oortmerssen by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:08 GMT -->
+</html>

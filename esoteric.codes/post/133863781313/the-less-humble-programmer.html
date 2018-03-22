@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/133863781313/the-less-humble-programmer by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Less Humble Programmer</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                The Less Humble Programmer
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-11-24">2015-11-24</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="1000" data-orig-height="668" class="tmblr-full"><img src="../../../78.media.tumblr.com/9800e8de83f28d75c5a04265c9b5c9ef/tumblr_inline_nxiha8Dfkw1qaohdj_500.png" alt="image" data-orig-width="1000" data-orig-height="668" width="500" height="334"></figure><p>
+
+            In his classic paper “The Humble Programmer” (1972),
+
+            Edsgar W. Dijksta called for putting aside personal style and overt cleverness in the interest of creating clean, readable, functional code. As he put it:
+        </p><blockquote><p>The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility, and among other things he avoids clever tricks like the plague.</p></blockquote><p>
+
+            This can be thought of as a sequel to his “A Case Against the GOTO Statement,” (1968) which helped standardize a structured programming style built around a sense of flow – this is the next step toward readable code. Personal expressiveness at the code level such as using arbitrary variable names or employing obscure hacks (whether just to show off, or in the service of efficiency) reduce readability. It’s not only a problem for other programmers who may have to understand the code later, but, as Dijsktra points out, even more so for the author of the code herself, who has to fully understand what’s happening as she writes it. When low-level, bit-shifting hacks really are appropriate (e.g. when algorithmic efficiency is mandatory), the current norm is to include comments to explain what is happening, which are simply compiled away. Even those proponents of more minimalist styles like&nbsp;Spartan code are doing so with clarity as an overwhelming objective.
+        </p><p>
+
+            However, clever hacks are still with us; it is exciting to discover twists of logic that make code do weird things. Take for instance the <a href="../119456019483/jsfuck.html">recent post on JSFuck</a>, where one brilliant, demented programmer used a behavior of JavaScript generally considered useless – that it returns the word “Array” from Array.toString() – in order to recreate the alphabet, building from those letters – and thereby writing code without using any letters at all. The result is a brainfuck-like stream of punctuation which is still perfectly valid JavaScript runnable in any modern browser. If the feature is there, even the completely useless one, some programmer will find a perverse use for it, no matter how absurd it may be. [See also: the templating language of C++ is itself Turing-complete]
+
+            <br>
+        </p><p><b>Practices like esolangs, obfuscated code, one-liners, and code golf are all Less Humble practices. They create spaces for play in code, where it’s okay to use weird hacks, write the unreadable, or stretch the boundaries of programming.</b></p><p>The approach of using secondary features of code (like Array.toString() above) is a common strategy in&nbsp;<b>Obfuscated Code</b>, a style of programming which is perhaps the most obvious counter to Dijkstra’s advice. To obfuscate is to make code opaque – to draw attention to it as a text, reducing the ability to see the algorithms behind it.&nbsp;</p><p>The best-known competition for Obfuscated code is the IOCCC (the International Obfuscated C Code Contest). Many entries there opt for a form of&nbsp;code pattern poetry,&nbsp;laid out to resemble shapes or images, often in conversation with what the code performs, such as this work:&nbsp;</p><figure data-orig-width="568" data-orig-height="874" class="tmblr-full"><img src="../../../78.media.tumblr.com/e403662fa50972ddfb0a6356b6e58964/tumblr_inline_nyaegxHHD81qaohdj_540.png" alt="image" data-orig-width="568" data-orig-height="874" width="500" height="769"></figure><p><i>Adrian Cables’s 2012 winning entry features a quick brown fox, pattern poetry style. This is an OCR program – a program designed to convert analog writing into digital text, itself built in a form which refers to the alphabet directly (the “quick brown fox…” sentence) and is itself an illustration of that sentence – referring to it both in analog and digital means, written in an unreadable style.</i><br><br></p><p>Others might appear as if they were written in other languages like Visual Basic or Java, yet still functioning as valid C. To do this, a Visual Basic command named one way to actually carry out much different instructions, remapped by preprocessor instructions.&nbsp;<br></p><p>
+
+
+
+            Interestingly, the IOCCC rewards attention to detail that are familiar as Dijsktrian goals: stability, including handling unexpected input, working across compilers. Many of the familiar values of mainstream coding are still in effect, just carried out in a completely different aesthetic.
+
+            In a sense, this work challenges Dijkstra’s pronouncements while still internalizing its values. It is a place for code that must be successful according to the same criteria, yet written in a way that explicitly breaks from the sentiments of clarity and humbleness he gives us to help make the work successful in the first place.&nbsp;
+        </p><p>Nick Montfort’s “Obfuscated Code” (in the wonderful collection Software Studies) looks at the principles behind this work:<br></p><blockquote>
+            <p>
+                Obfuscated
+                code demonstrates that there are other aesthetic principles at play
+                besides those “classical” ones that have been most prominent in discussions of
+                programming aesthetics by programmers and critics.
+            </p>
+        </blockquote><p>One of the aesthetic principles of Obfuscated Code that Montfort mentions is that of conciseness, which is further emphasized in two other Less Humble coding styles: <b>One Liner </b>programs (which Montfort offers some great examples of in his piece) and&nbsp;<b>Code Golf</b>, a set of challenges that reward the shortest program which completes a specific task. Code Golf challenges offer Oulipean-syle constraints (not using the letter “e” is perhaps too easy, but not using letters you’ve already used provides a substantial challenge). Code golf can involve obfuscated programming outright as a challenge, but more commonly techniques arising from obfuscated practice are used in order to solve code golf problems. [Stack Exchange has an active Code Golf forum]</p><p>Where code golf and obfuscated code willingly embrace esoteric methods of programming, we can also see in these alternate methods a breaking away from the safety of high-level languages, a call back to what programming was like in the days of machine code – particularly in esolangs themselves.&nbsp;<br></p><p>Wendy Hui Kyong Chun has written about how giving up the direct interface with the machine was hard for early programmers. Chun quotes John Backus, developer of FORTRAN about the “black art” of early coding, saying they had a</p><blockquote><p>“chauvinistic pride in their frontiersmanship and a corresponding conservatism, so many programmers of the 1950s began to regard themselves as members of a priesthood guarding skills and mysteries far too complex for ordinary mortals. Languages like FORTRAN opened up this world to people who were not trained in this black art.”</p></blockquote><p>In a sense, alternative coding practices recreate this sense of code as an esoteric knowledge. Here not in a chauvansitic way, but with a sense of excitement in breaking new ground within deliberately obscure rules offered by an esolang or a set of code golf constraints. Each esolang creating a unique means of communicating with the computer that make sense only to esoprogrammers willing to bypass the niceties of mainstream computing. Esolangs may convolute code but do it in a way that gives esolangers access to low-level activity masked in the name of safety and ease provided by these high level languages. As crazy as brainfuck looks, it forces one to deal with memory cells directly; much of the delight of the language is in this engagement with the machine which is obscured by the safety of high level code and the “humble” approach of reducing complexity. The most extreme of which is probably <a href="../111294315013/checkout-coding-in-layers.html">Checkout, a language proposal that tries to give direct chip access to the programmer</a>.&nbsp;</p><p>This opaque code – whether in the form of obfuscated work or esolangs – is also an exploration of code and language design as mediums in themselves, as much as deliberately using tape hiss or jpeg compression in visual studies of those media.&nbsp;</p>
+    </div>
+
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/133863781313/the-less-humble-programmer by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:30 GMT -->
+</html>

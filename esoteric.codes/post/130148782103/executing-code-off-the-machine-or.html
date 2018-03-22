@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/130148782103/executing-code-off-the-machine-or by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executing Code off the Machine</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Executing Code off the Machine, or: Non-Deterministic Processes Don’t Have to Give You a Heart Attack
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-09-29">2015-09-29</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <p>The Piet program on the cover of Cox and McLean’s <i>Speaking Code</i> is not a picture of the code – it <i>is</i> the code. As an image printed on a book jacket, it’s not in the correct format for Piet interpreters, but it still contains all the information needed to function as a Piet program. It is not hard to imagine a system that could scan Piet programs from print and run them similar to how QR codes are read.</p><p>But what if we wanted to run the code without using the machine at all? It’s been claimed on this blog that esolangs need not be confined to what we might ordinarily think of as a computer. The Turing Machine (a generalized example of a CPU) was described using the metaphor of a machine manipulating symbols on a tape. In practice, it could be a CPU working on data stored in memory, or a person scratching symbols in the sand, following the same rules for how those symbols are processed.&nbsp;</p><p>This post will investigate esolanging off the machine, looking at several languages that expand the idea of the compiler.</p><figure class="tmblr-full" data-orig-height="334" data-orig-width="500"><img src="../../../78.media.tumblr.com/ec227eb5d3542018cc5bd998d30e2ee8/tumblr_inline_o1b98o7dAX1qaohdj_500.jpg" data-orig-height="334" data-orig-width="500" alt="image" width="500" height="334"></figure><p><i>Manqala board image by elPadawan&nbsp;(2013)</i></p><p>Of childhood games, Manqala is one of the more numerical: a game of counting where players who can do a quick series of simple arithmetic have the advantage (see:&nbsp;<i>Mancala: Playing is Easy - Winning is Computational</i>). For those who played as children, it’s perhaps more familiar as a game of rote practice (my sister and I stopped playing once we had both memorized the lengthy series of moves ensuring a win to the first player). But even then, it’s a game of manipulating numbers: the count of stones in each pit.&nbsp;</p><p>It’s easy to see how those pits could serve as memory cells, with the number of stones in each serving as that cell’s current value. If we were to enact an esolang using this system, I would suggest sticking to a 4-bit system, as 15 stones could maybe fit in the pit of an ordinary Manqala board, and 255 stones (for 8-bit) is a lot to have to count and re-count. But of course this is already the beginning of an esolang that uses the board, called $tonePits. It’s more of an idea than a fully developed language. The language uses the game’s count-and-capture rules to manipulate numbers. Its esolangs wiki entry asks if you feel like a “paleolithic caveman programmer” as you code it. But we cavemen are not only the programmers but also the compilers, carrying out instructions by playing the game according to $tonePits’ rules. The language is still pretty undeveloped (the beginnings of an oscillator are sketched out) but it’s an interesting prompt to move a language into physical space.</p><figure class="tmblr-full" data-orig-height="416" data-orig-width="300"><img src="../../../78.media.tumblr.com/80a272ecde62bfd7adebe5f738db50f8/tumblr_inline_o1b9alqM421qaohdj_400.png" data-orig-height="416" data-orig-width="300" alt="image" width="300" height="416"></figure><p>A much more developed game-based esolang is the uniquely geeky Turing machine using Magic: The Gathering cards.&nbsp;</p><p>Alex Churchill is really into Magic: The Gathering. Here is a text generator he wrote for card descriptions. In this model, Alex is the processing head, manipulating a tape where each step is an individual card:</p><blockquote>
+            <p>
+
+                A series of Zombie tokens controlled by Alex represent the tape to the right of the current head: the creature one step to the right of the head is 1 toughness away from dying, the next one over is 2 toughness from dying, etc. A similar chain of Yeti tokens, also controlled by Alex, represent the tape to the left.&nbsp;
+            </p><p>
+
+                The operation “move one step to the left” is represented in this machine by creating a new Ally token, growing all Allies by 1, and shrinking all Zombies by one.&nbsp;<br>
+            </p>
+        </blockquote><p>Alex’s implementation is not exactly a language but rather a Universal Turing Machine, a theoretical construct that can simulate other computers. It’s less friendly than a simpler language might be but allows for his Magic: The Gathering based system to mimic the workings of computational systems more broadly. It was achieved by adapting the small Universal Turing machine defined in Rogozhin’s paper.&nbsp;</p><p>The rest of the lengthy rule set&nbsp;can be read here&nbsp;(also&nbsp;here is a write-up for boingboing.net).</p><figure data-orig-height="254" data-orig-width="180"><img src="../../../78.media.tumblr.com/1e97586bf26721d2c3f37e5e2d961655/tumblr_inline_o1b9awsotg1qaohdj_250.png" data-orig-height="254" data-orig-width="180" alt="image" width="180" height="254"></figure><p>An even weirder example is that of the human heart working as a Turing Complete system.</p><p>
+
+            Turing Completeness emerges in some very unexpected places, often unintentionally. It’s been proven that Minesweeper is Turing Complete (if implemented on an infinte board), as are MediaWiki templates. Here is a list of other accidentally Turing Complete systems.
+
+            <br>
+        </p><p>
+            A paper with the unlikely title&nbsp;“Implications of the Turing completeness of reaction-diffusion models, informed by GPGPU simulations on an XBox 360: Cardiac arrhythmias, re-entry and the Halting problem” shows that heart cells can form the equivalent of a NOR gate in how electrical signals are processed. The NOR gate is a fundamental logic gate which can be used to build other logic gates, on which a Turing Complete system can manifest. The paper’s aim seem to be to show that
+
+            cardiac tissue is not deterministic (if it’s Turing Complete, it can’t be determined). I’m pretty sure the point of the paper is not to encourage the user to build an XBox 360 with cardiac tissue, which would be a neat paper.&nbsp;
+        </p><p>Rather than walk through how we get from NOR gates to Turing Completeness, take a look at this great write-up with&nbsp;neatly summarizes&nbsp;the process.<br></p><p>***</p><p>These three examples show what is possible in working with non-traditional computational spaces and can hopefully serve as a jumping off point for esolangers who want to work off the traditional machine. Starting with the idea that a programming language is just a list of rules, an esolanger can develop or adapt programmatic rules to any sufficiently complex system.</p>
+    </div>
+
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/130148782103/executing-code-off-the-machine-or by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:51 GMT -->
+</html>

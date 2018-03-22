@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/157780744195/interview-with-martin-kleppe by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview with Martin Kleppe</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Interview with Martin Kleppe
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2017-02-27">2017-02-27</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="1300" data-orig-height="800" class="tmblr-full"><img src="../../../78.media.tumblr.com/a3b663d68e4bc631795b1f80a4e57813/tumblr_inline_olzv2k8oH41qaohdj_500.png" alt="image" data-orig-width="1300" data-orig-height="800" width="500" height="307"></figure><p><i>Martin Kleppe is best known as the creator of JSFuck, an esoteric coding style of JavaScript, allowing one to write fully functional JS with just six punctuation symbols. While it is similar in style to brainfuck, JSFuck is not an invented language but a discovered one; amazingly, it is native to JS. This means it is runnable as JavaScript without additional code to interpret the symbols or translate them into some other system. Kleppe’s other projects deal with code that functions on multiple levels simultaneously; programs that use their own code as display, or self-referential polyglots that contain markup, script, and image as a single text calling itself in different contexts.</i></p><p><b>» </b><b>How did you first discover the weird features of JavaScript that make JSFuck possible? Was there a moment when you realized you could write essentially any JavaScript code in just the tiny set of JSFuck characters?</b>&nbsp;</p><p>This happened in 2012 when a friend showed me a Tweet with some cryptic JavaScript. There were no Latin letter involved but it was possible to execute the code and it resulted in a simple word. Nothing really fancy when I compare it to what is possible today but at that time I was super impressed! And it made me curious.&nbsp;</p><p>So I started to walk through the code step by step (or better: char by char) and already learned a lot about type coercion in JavaScript. The basic idea was to convert primitive data types to a string (eg: true + [] == “true”) and then pull out single characters (eg: “t” from “true”[0]). These characters then can be joined together to generate new words.&nbsp;</p><p>Then the question came up, if it is possible to get more than just a handful characters by playing this kind of Scrabble game. The solution was to access and call methods that generate new strings.</p><p>
+            <b>
+                <b>» </b>
+
+                The amazing thing about JSFuck is that it’s all already there in JavaScript – you showed us a new approach to writing JS, rather than constructing a language artificially. What is it about JavaScript as a language that makes JSFuck possible? How/why did JavaScript end up this way?
+            </b>&nbsp;
+        </p><p>Some people say that JavaScript is a bad programming language and poorly designed. But I wouldn’t agree. In my opinion it was designed with a lot of freedom in mind – which is a good thing. It allows you to go in different directions and seek your own style. There were no strict types or rules how to use it, and many people came up with their own idea about how to solve problems. It is like a mutation or evolution that is unveiling new aspects. In my work, I always try to break a given limit. And a way to achieve this is by digging deeper and deeper to explore new areas that we not have thought of.</p><figure data-orig-width="527" data-orig-height="276" class="tmblr-full"><img src="../../../78.media.tumblr.com/a770d56455462792697c9ada87161af8/tumblr_inline_olfr48nW3H1qaohdj_500.png" alt="image" data-orig-width="527" data-orig-height="276" width="500" height="261"></figure><p><i>Two Aurebesh scripts</i></p><p>
+            <b>
+                
+                    <b>» </b>
+
+                    Aurebesh.js
+                 extends the JSFuck approach, simplifying some of the combinations of symbols into letters from a list of alphabets. The scripts have very different aesthetics based on the alphabet, some of which look more obfuscated than others, but it’s still pretty abstract – from what I can tell, it’s using the letters to represent JS atomic parts which are then constructed into JS commands. Could you tell me a bit about why you went this direction?
+            </b>
+        </p><p>Aesthetic was definitely one of the main reasons. Especially the style of other writing systems that we are not used to. I was always fascinated by words written in foreign alphabets, because you look at them and know that there is a meaning behind but you can not even read it. In school I learned Russian first and then English which was way easier for me, because the latin alphabet was something I was used to. </p><p>This and vodka were the reasons, why I first started the ЗВЕЗДА СМЕРТИ (Death Star) project. Later I was invited to JSConf.asia where I presented the Matrix intro sequence written with Asian characters only. Another conference led me to Tel Aviv that made me think, how JavaScript would look like when written in Hebrew from right to left. </p><p>The term “character” from the Greek “χαρακτήρ” combines many meanings and also reflects, that symbols has a different aesthetics. Aurebesh.js plays with that fact in a new context and let us translate code written in English into other writing systems. </p><p>When you look at these scripts, can you figure their behavior in your head or do you need to translate them into regular old javascript to see what they’re actually doing?</p><p>I’d love to say: Yes, I can read this code and parse it in my head. – But to be honest: I can’t! At least, it would need pen, paper and a couple of minutes to solve it. Like a crossword or sudoku puzzle. That’s why I build little helpers to do that for me.</p><figure class="tmblr-embed tmblr-full"><iframe id="youtube_iframe" src="https://www.youtube.com/embed/G11vj2XiAtg?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque" allowfullscreen="" width="500" height="281" frameborder="0"></iframe></figure><p><i>Kleppe presenting at JSConf.eu 2014</i></p><p><b>»&nbsp;Could you explain a bit about the animated quines (Hello World 1k etc) and how this style developed? The animated quality adds a great immediacy to the minimized quine; the code shows us what it’s doing even while we’re reading it, giving a way past its obfuscation.&nbsp;</b></p><p>Let’s explain the term “quine” first: A quine is a computer program which takes no input and produces a copy of its own source code as its only output. A simple one in ES6 is:</p><p>(Q=a=&gt;alert(’(Q=’+Q+’)()’))()</p><p>Quines are dealing with recursion as a topic, because when you execute the result, you will see the same result again and again. The /world was the first animated quine I did and it presented it at JSConf.eu in 2013. It is based on the Qlobe program by the incredible Yusuke Endoh. I saw that years ago and was so fascinated by the spinning world inside of code, that I wanted to do that in the browser. I decided to not read the Ruby source code but figure out everything at my one. It turned out that it was really a long and hard way to go but I learned more than ever before. </p><p>In the end it was shorter (exactly 1024 bytes) than the original and also included code highlighting. The feedback on this was overwhelming and I decided to do more. My second animated quine was Mandelcode – code shaped in the form of a Mandelbrot and once you click, it zooms into the fractal. After some time I started to evolve the topic and created the Matrix 雨 quine using Asian characters only and recently VOID where invisible code was used to hide the program itself.</p><p>
+            <b>
+                <b><b><b>» </b></b></b>
+
+                Please tell me about your new incept10n.com project
+            </b><br>
+        </p><p>This may look different to what I did before, but in the core, it explores the limits of languages used in the Web, too. Incept10n is a so-called polyglot, a single file written in different languages. In our case the file is an image, a style sheet, a script and a web page – all at the same time. This works, because I manipulated the header section of an JPEG to inject code. When you run it in different contexts it will behave depending on its surrounding.<br></p><p>When you open the page in the web browser, it renders an HTML page. The HTML contains a reference to an external JavaScript pointing to the same file. This will execute it as a script that dynamically writes a CSS link tag. The loaded &nbsp;file then renders a background image into a section of the page. This is finally the manipulated JPG, showing an image of the movie Inception.</p><p>There are other examples that merge images and scripts to bypass security restrictions or render a descriptive page around a funny squirrel picture. My motivation was to see how many levels of inceptions with different formats can be done in the browser. I wanted to go some steps further but stumbled many times. After some time I was not even sure if it will all work out. Reading the JPEG specs, fiddling with old-school HEX editors and learning some new command-line tricks helped me out in the end.</p>
+    </div>
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/157780744195/interview-with-martin-kleppe by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:49 GMT -->
+</html>

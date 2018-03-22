@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/132018216293/mimic by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mimic</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Mimic
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-10-27">2015-10-27</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="370" data-orig-height="370" class="tmblr-full"><img src="../../../78.media.tumblr.com/41f37d2c81b6375c150e104f8f0b0233/tumblr_inline_nwuozbmz901qaohdj_400.png" alt="image" data-orig-width="370" data-orig-height="370" width="370" height="370"></figure><p>Mimic is a brilliant tool for injecting mayhem into code. It has a simple strategy, swapping existing characters with homoglyphs – other characters that are visually identical but semantically different – from across Unicode’s Basic Multilingual Plane.</p><p>It was inspired by this tweet:</p><blockquote>
+            <p>MT: Replace a semicolon (;) with a greek question mark (;) in your friend’s C# code and watch them pull their hair out over the syntax error</p><p>
+
+                — Peter Ritchie (@peterritchie) November 16, 2014
+            </p>
+        </blockquote><p>The Greek question mark looks identical to the semi-colon in most fonts. Other symbols, like the full width semi-colon, differ only in how much whitespace they occupy, or other differences that are indiscernible at a glance. Mimic replaces letters, numbers, punctuation, and whitespace itself, to create incomprehensible error messages:&nbsp;<br></p><figure data-orig-width="1465" data-orig-height="286" class="tmblr-full"><img src="../../../78.media.tumblr.com/5dd87c5536a953f642a5f118430c6dae/tumblr_inline_nwuptxXlWW1qaohdj_500.png" alt="image" data-orig-width="1465" data-orig-height="286" width="500" height="97"></figure><p>The screenshot above has only one character replaced. Why is index not index??</p><p>***</p><p>Mimic doesn’t care if the symbols it introduces are valid symbols in the language the code is written in – invisible control characters can make the code uncompileable just as well as adding the letter “b” everywhere. Whether or not they are characters allowed for use in an identifier would only change the type of error that occurs.</p><p>However, the idea of using characters with identical appearance for different purposes could be an interesting one for esolangers when put to good use. Some Uniciode-aware compilers are pretty unrestrictive with variable names, even allowing characters from the far reaches of Unicode. Even stodgy, old-school C++ has some ranges of Unicode that are acceptable. Those ranges vary based on compiler, but gcc and Visual C++, oddly, both include the Greek question mark, which seems like a terrible idea to include.</p><p>Here’s simple code using the Greek question mark in a variable name – it works if one remembers to set the file to UTF-8 (codepage 65001):<br></p><figure data-orig-width="1979" data-orig-height="998" class="tmblr-full"><img src="../../../78.media.tumblr.com/1922039ae512e8cf49c164380c9bba42/tumblr_inline_nwsxphVMDG1qaohdj_500.png" alt="image" data-orig-width="1979" data-orig-height="998" width="500" height="252"></figure><p><i>Creating a variable called a; in C++</i></p><p>This looks ridiculous but is perfectly valid C++. This can be thought of as the opposite of code Mimic produces: it looks like it should certainly fail, yet runs perfectly well.</p>
+    </div>
+
+
+</div>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/132018216293/mimic by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:38 GMT -->
+</html>

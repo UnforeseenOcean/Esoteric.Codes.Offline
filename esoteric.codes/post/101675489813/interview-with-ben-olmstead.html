@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/101675489813/interview-with-ben-olmstead by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview with Ben Olmstead</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Interview with Ben Olmstead
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2014-11-03">2014-11-03</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <p><em>Ben Olmstead is best known as the creator of Malbolge (1998), an early esolang which remains&nbsp;the most difficult&nbsp;language to code. He’s also about as OG as one can get in the esolang world, part of the first group of programmers to take up the form in the late 90s.</em></p><p><strong>&gt;&gt; Do you remember how you first heard about esolangs?</strong></p><p>It would have been late ‘96 or early '97. &nbsp;I had internet access via college, and, well, I spent a&nbsp;<em>lot</em>&nbsp;of time plugging terms into search engines, then reading all the results. &nbsp;As someone with interest in computer programming, it was inevitable that I would stumble on esolangs.</p><p><strong>&gt;&gt; How did you connect with the esolang community? What was it like at the time?&nbsp;</strong></p><p>At the time, the “esolang community” was just a few people on Chris Pressey’s mailing list. &nbsp;It was very much like a mailing list with half a dozen young men who were interested in pushing the boundaries of programming… but not in useful directions. &nbsp;:-)</p><p>I think I was attracted to it for the challenges – I enjoyed implementing a Befunge interpreter and compiler, I enjoyed trying to golf Befunge programs, and I enjoyed wrapping my head around the stranger languages that popped up.</p><p><strong>&gt;&gt; What does it mean to “golf Befunge programs”?</strong></p><p>“Golf” is a programming challenge in which you try to make the shortest program (in terms of number of characters) to do some specified task. &nbsp;Perl golf is especially popular these days.</p><p><strong>&gt;&gt; Your first esolang, Wierd, was a collaboration with Pressey and John Colagioia. How did that come about? Did it start with ideas presented in the mailing list itself? [NOTE: the Wierd name comes from Wired + weird, more on the language here]</strong></p><p>I shouldn’t have credit for Wierd. &nbsp;I’m sure we were talking about ideas on this list, but from what I remember Chris actually made the Wierd spec and interpreter on his own. &nbsp;Piet and Whitespace would have shown up soon after – sort of mining the “alternate ways to represent programs” vein.</p><p><strong>&gt;&gt; Tell me about the choice to use ternary numbers in Malbolge. Is that connected with the idea of ternary logic (such as with the Soviet ternary computers)?</strong></p><p>I made Malbolge (from conception to implementation) in one afternoon, which should tell you something about the depth of the design process. &nbsp;I picked ternary because it seemed harder to understand than binary.</p><p><img alt="image" src="../../../78.media.tumblr.com/4e5016f1d6a46af8a799f6dc2ae692bd/tumblr_inline_ned5qpU7Ru1qaohdj.png"></p><p><strong>&gt;&gt; I like that base three is both a low number, yet one so complicated to think in. Tell me about the crazy operation: was this also designed specifically to be as counter-intuitive as possible? You maintain three 0 outputs, three 1s, three 2s, was that technically necessary?</strong></p><p>Yes, it was designed to be counter-intuitive.</p><p>The 3-3-3 split is not necessary; I don’t know why I did it that way. &nbsp;(The binary analogy would be NAND: you can build up any logic from NAND, which has three 1s and one 0 in its truth table.)</p><p><strong>&gt;&gt; There are a few bugs in the compiler (such as stopping execution when hitting data outside of the 33-126 range). Have these become part of the language itself? What is the usual practice when people discover unintentional compiler features like these? Have they made Malbolge easier or harder to use?</strong></p><p>Stopping execution outside of 33-126 was intended, I think; if anything, there is a bug in the specification.</p><p>I know there is a mismatch between the documented and implemented tables. &nbsp;I have noticed that some people decide that the bug is in the specification, and others decide the bug is in the implementation; it certainly makes Malbolge harder to use, and fragments the user community (such as it is).</p><p>If I were to make a Malbolge 2000, I would definitely make the documentation subtly wrong.</p><p><strong>&gt;&gt; Part of what’s unique about Malbolge is how it alters its own source code as it runs (in memory at least) and uses the same content as both data and instructions. Do you remember the thinking behind these features?</strong></p><p>I probably never thought about using the same memory space for both code and data; at the time my understanding of computation was heavily informed by how real hardware (especially x86) works.</p><p>Self-altering instructions were specifically intended to make things difficult.</p><p><strong>&gt;&gt; When you first designed Malbolge, did you know whether it was possible to write working programs in it?</strong></p><p>I thought it was, but I never had good evidence for it.</p><p><strong>&gt;&gt; Tell me about Dis; was it a chance to make a Malbolge that one can actually code by hand, or was there a different idea at work?</strong></p><p>It was a reduced version of Malbolge in which I was able to write an actual program – I never wrote a Malbolge program.&nbsp; (Well, I think I wrote a program that printed “H” and exited.)&nbsp; It seemed odd to release a language without even a “Hello, world”, so I put out a “tractable” version at the same time.</p><p><strong>&gt;&gt; Did the Essies ever actually happen? It looks like nearly every year the winners weren’t picked or there’s no record of whether there were submissions or winners (much in the spirit of esolangs). What was that experience like?</strong></p><p>They did happen the first time around.&nbsp; The experience was forgettable: I literally forgot that they ever happened until I started reading about them on the esolang wiki.</p><p><strong>&gt;&gt; Are there any stand-out esolangs for you (recent or otherwise)? Do you still follow what’s happening in esoteric programming?</strong></p><p>Befunge-93 is probably my favorite to actually use; writing Befunge programs is almost like drawing, or playing a game.&nbsp; I think part of the appeal is that Chris made an instruction set that was nicely balanced for making things easy, but not too easy, and the way the instruction pointer moves adds a sort of physicality to the language – you can almost imagine a Befunge program as a sort of Rube Goldberg roller coaster.</p><p>I really haven’t tracked esolangs in this millennium, though.&nbsp; It would be a little bit sad if there were no great ones.</p><p><strong>&gt;&gt; What is xn13.c?</strong></p><p>It is a program, and a puzzle. &nbsp;A whimsy intended to momentarily amuse those who would be inclined to be amused by it.</p><p>It is also, unfortunately, a use of undefined behavior that is increasingly unlikely to work with optimizations turned on.&nbsp; I should probably update it.</p><p><strong>&gt;&gt; What were the early attempts to write Malbolge code like?</strong></p><p>The history is available on the web, but essentially a few people used genetic algorithms to generate some “hello, world” programs of varying quality, and then Lou Scheffer had the insight to treat it as a cryptanalysis problem, which allowed him to write real programs.</p><p><img alt="image" src="../../../78.media.tumblr.com/f7df2ffd2fcbda2ec9b0a990a05d9cfe/tumblr_inline_ned5qccMhZ1qaohdj.jpg"></p><p>Malbolge on CBS's&nbsp;<em>Elementary</em></p><p><strong>&gt;&gt; How did you first hear about Malbolge’s mention on Elementary? What was their take on it? I haven’t actually seen the episode, but I hear the bad guy writes a Malbolge program by hand and leaves it as a clue…</strong></p><p>I have seen the episode (a friend dropped me a note when it aired). &nbsp;Your characterization is roughly right; essentially Holmes finds a scrap of paper (dropped by the villians) with a Malbolge program on it, which, when “decoded”, provides the clue the heroes need to move the plot forward.</p><p>It was slightly surreal, to find some analogue of me that had been dragged into a fictional universe.&nbsp; (The “creator of Malbolge” is referenced, though not named.)</p><p>I got this response (via Twitter) from the staff: “Malbolge made it into the show after a long and alarming rant from our writer Jeff King. Glad it amused.” &nbsp;Not sure if they had any idea who I was :-)</p><p><strong>&gt;&gt; It seems that many esolangers favor command-line interfaces (or any interface that’s close to the machine), and forego commercial sites like Facebook and Tumblr, favoring IRC, Wikipedia, and other explicitly non-commercial forms of communication. Is this your experience? Is this just a geek thing or does this tie into something more specific to esolangers?</strong>&nbsp;</p><p>I don’t know about “geek” thing, but CLIs&nbsp;<em>are</em>&nbsp;a “programmer” thing.&nbsp; That’s a chicken-and-egg thing, to some extent: programmers prefer CLIs because that’s where programming tools are, and programming tools have CLIs because that’s what programmers prefer.&nbsp; CLIs aren’t really “closer to the machine” in any meaningful sense, though.</p><p>As far as the rest of it goes, I have no idea. &nbsp;I dropped out of esolangs before Facebook or Tumblr existed (or even Friendster or Myspace).&nbsp; I personally have no love for Facebook (because I am anti-“social”), but I also don’t use IRC (because I am antisocial).</p>  </div>
+
+</div>
+
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/101675489813/interview-with-ben-olmstead by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:39 GMT -->
+</html>

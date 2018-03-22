@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/166571437523/terrariaclone-an-incomprehensible-hellscape-of by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerrariaClone: an Incomprehensible Hellscape of Spaghetti Code</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                TerrariaClone: an Incomprehensible Hellscape of Spaghetti Code
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2017-10-19">2017-10-19</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="1590" data-orig-height="984" class="tmblr-full"><img src="../../../78.media.tumblr.com/54ec28ae369d17afe625bf03a83b898a/tumblr_inline_oxvm4ePhyb1qaohdj_500.png" alt="image" data-orig-width="1590" data-orig-height="984" width="500" height="309"></figure><p>Radon Rosborough has&nbsp;gallantly shared his terrible code on github for our amusement and edification. The codebase, written between 8th and 9th grades, is impressive in not only its inscrutability but its shear size, at 11,000 lines, almost all contained within one class. Over the last few days, it’s racked up 800 stars on github.</p><p>The project is a clone of Terraria, a popular 2D game where one can explore and design worlds. As Radon tells it:</p><blockquote>
+            <p>
+                Ironically, at the
+                time, since it was only available for Windows, I’m not sure I ever actually
+                played it—everything I knew about it was from YouTube videos. After they
+                released a Mac version a couple years later, I did try it out, and enjoyed it,
+                although I never got too into it. I think there’s some kind of strange
+                attraction that people have to writing bad Terraria clones. You see them
+                *everywhere* on amateur game development forums.
+            </p>
+        </blockquote><p>Part of the code’s charm is its unashamed verbosity, with the same commands repeating many times, rather than collapsed down into loops:</p><blockquote><p>if (key.getKeyCode() == key.VK_Q) c = ‘q’;<br>if (key.getKeyCode() == key.VK_W) c = 'w’;<br>if (key.getKeyCode() == key.VK_E) c = 'e’;<br>if (key.getKeyCode() == key.VK_R) c = 'r’;<br>if (key.getKeyCode() == key.VK_T) c = ’t’;<br>if (key.getKeyCode() == key.VK_Y) c = 'y’;<br>if (key.getKeyCode() == key.VK_U) c = 'u’;<br>if (key.getKeyCode() == key.VK_I) c = 'i’;</p></blockquote><p>
+
+            This little tour of the computer keyboard (starting here with the top row) continues through most of the alphabet.&nbsp;
+        </p><p>And the inline data tables are many, full of magic numbers:<br></p><blockquote>
+            <p>
+                Short[][] blocktools = {{},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{11, 12, 13, 14, 52, 55, 58, 146, 149, 155, 158, 170, 173},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{11, 12, 13, 14, 52, 55, 58, 146, 149, 155, 158, 170, 173},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{11, 12, 13, 14, 52, 55, 58, 146, 149, 155, 158, 170, 173},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{7, 8, 9, 10, 51, 54, 57, 145, 148, 154, 157, 169, 172},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{11, 12, 13, 14, 52, 55, 58, 146, 149, 155, 158, 170, 173},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{},<br></p><p>…</p></blockquote><p>This goes on for 168 lines. There’s a nice rhythm to the patterns, even if their meaning is completely inscrutable from the code.</p><p>The particular flavor of obsessiveness this shows is, I think, very tied to age and experience, and perhaps this is what makes the project so relateable to other programmers. I can well remember my own attempts writing adventure games in Commodore BASIC, using only goto for flow control. At the time, I didn’t really get functions, which seemed excessive, an indulgence for people who didn’t appreciate the power of goto.</p><p>The particular flavor of insanity in TerrariaClone, however, is also reflective of its history as code transported from one language to another. The project began in Python, which the programmer was more familiar with.</p><blockquote><p>
+
+Before TerrariaClone, I think my only programming experience was really basic Python scripting—we’re talking “Battleship”-level. Originally the game was written in Python using PyGame, and I think that the reason I moved to Java was to avoid people from copying the source code—at that point I was under the illusion that it would be possible to sell the game
+
+<br></p></blockquote><p>Where Python is quite lenient about encapsulation and structure, Java is more conservative. If one comes to it without understanding this, they might be tempted to stuff the main program flow into a single init(). This method grew so large that the Java compiler crapped out (1300 lines), so the developer moved the bulk of the code to another function, named codeTooLarge().&nbsp;</p><p>Although he has since removed 500 examples of unnecessary boxing – also artifacts of this transition to Java – we were left with a taste of what code looks like that doesn’t quite get typing:</p><blockquote><p>
+
+public static void print(String text) {&nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}
+<br>public static void print(int text) <br>{
+ &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}
+<br>public static void print(double text) <br>{<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}
+<br>public static void print(short text) <br>{
+ &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}
+<br>public static void print(boolean text) <br>{
+ &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}
+<br>public static void print(Object text) <br>{
+ &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;System.out.println(text);
+<br>}&nbsp;</p></blockquote><p>Since he posted it on github, some folks have tried to help fix it. Others have opted to port it to a third language&nbsp;for some reason.&nbsp;</p><p>Since then, Radon has learned to code properly. You can see his more recent and reformed style in these recent projects.</p><p>Thanks to Radon for sharing this with the world!</p>  
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/166571437523/terrariaclone-an-incomprehensible-hellscape-of by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:15 GMT -->
+</html>

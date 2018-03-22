@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/84838361073/verbosefuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerboseFuck</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                VerboseFuck
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2014-05-05">2014-05-05</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <p><img src="../../../78.media.tumblr.com/88eab2a45a7c2d16c1f26f4e6418326a/tumblr_inline_n5422bggXm1qaohdj.gif" alt="image"></p><p>VerboseFuck</p><p>It’s common for new esolangers to start off making a language whose commands map directly to brainfuck; what we call a brainfuck equivalent. It’s an easy way to get started in esolanging, as brainfuck interpreters can just be modified to take the new symbols. This is sometimes criticized as undermining what’s actually interesting in esolangs, since ordinarily we look at the logic and behavior that arise from a set of rules as the aesthetic of the language; if we think of the language as a rule set, they basically have the same rules. In ais523’s interview, he discouraged esolangers from churning out another “brainfuck-variant-of-the-week”). This is simlar to complaints from the beginnings of .NET, when Visual Basic.NET was accused of being C# in drag, C# for people who like typing more than they need to. Amazingly, VB.NET is currently the 10th most popular programming language in the world (perhaps used by people transitioning from the old Visual Basic? I have no idea).</p><p>But, back on topic; let’s not be too hasty in dismissing brainfuck equivalents. Brainfuck is the most well-known of esolangs, and can serve as a blank slate. Some languages take the familiar brainfuck logic and refocus attention on the symbols themselves; VerboseFuck is one of these.</p><p>Part of what makes brainfuck so recognizable is its unusual vocabulary, using all punctuation marks. This creates a sense of mystery around how commands function. VerboseFuck clearly spells out each of these commands, but does this in a way that reduces none of the complexity of using the language. By spelling out each command, VerboseFuck also rids brainfuck of its conciseness, making wordy programs.&nbsp;</p><p>In brainfuck, we use &lt; to move the pointer one memory space to the left. In VerboseFuck, we replace it with:</p><blockquote><p>math.equation(pointer = pointer - void(1));</p></blockquote><p>Likewise, moving a pointer to the right right ( &gt; ) is:</p><blockquote><p>math.equation(pointer = pointer + void(1));</p></blockquote><p>First, math.equation() is ridiculous, it creates the impression that it does nothing but cause its argument (in this case “pointer = pointer - void(1)”) to be executed (the equivalent of “let” in some prehistoric languages, as in “let pointer = pointer + void(1)”). But it sounds totally valid, something that could exist, even if it has no reason to. It’s remiscent of a story told by a young child; syntactically correct, but including every detail and logical step, no matter how redundant.</p><p>But the reality is that this “command” does even less than it appears. Actually, math.equation does absolutely nothing on its own, it’s not a command or an expression. It just happens to be some of the characters required to write the command of “math.equation(pointer = pointer - void(1));”</p><p>We can see this in the way that the following line would not work:</p><blockquote><p>math.equation(pointer = pointer + void(2));</p></blockquote><p>The number 1 cannot be replaced with 2 because neither 1 nor 2 have any meaning in VerboseFuck. If you want to move the pointer two places to the left, this is the only way. Write the command twice:</p><blockquote><p>math.equation(pointer = pointer - void(1));</p><p>math.equation(pointer = pointer - void(1));</p></blockquote><p>This is VerboseFuck’s equivalent of brainfuck’s “[” (which starts a loop) in its full glory:</p><blockquote><p>conditional(block.if, boolean.inequality(deref(pointer), byte(0))) { program.flow.labeledjump(defines.label.last()); };</p><p>undefine(defines.label, defines.label.last());</p></blockquote><p>Again, we have VerboseFuck’s logorrhea, every step spelled out: we’re making a conditional around a boolean referenced by the pointer one to the left of the command etc etc. Although it looks complicated, most programmers can look at this and figure out what it’s probably doing, if not why someone would write it in such redundant detail.</p><p>But VerboseFuck is not only verbose in each individual command (remember, those two lines above are always written exactly the same way and mean exactly the same thing), it maintains the verbosity of brainfuck, in that it requires a great many commands to do anything. The full Hello, World program for VerboseFuck (which can be read here) is 213 lines (something many languages can do in one).&nbsp;</p><p>Even though each command implies a great many alternatives we can’t really use (like the example of passing 2 instead of 1), this language does not restrict us from doing these things, it just forces us to take a verbose path to get to the same result. We know this because it’s a full brainfuck equivalent, meaning that, like brainfuck, it’s Turing Complete – it can be used to write any general purpose program. We could write a game (maybe&nbsp;Hunt The Wumpus), or if we wanted to devote years to it, a perfectly useless yet fully functional web server.&nbsp;</p>  </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/84838361073/verbosefuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:19 GMT -->
+</html>

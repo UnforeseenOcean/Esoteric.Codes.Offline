@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/166814604598/an-intro-to-fractran by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An Intro to Fractran</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                An Intro to FRACTRAN
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2017-10-26">2017-10-26</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="1284" data-orig-height="466" class="tmblr-full"><img src="../../../78.media.tumblr.com/ac03b6332cbfa2345da8f1abbd86bd3a/tumblr_inline_oxvf595Tzv1qaohdj_500.png" alt="image" data-orig-width="1284" data-orig-height="466" width="500" height="181"></figure><p>FRACTRAN is a beautiful language but takes a bit of work to understand. Mark Chu-Carroll of Good Math Bad Math, described it as “absolutely insanely difficult to program in, but based on one of the most bizarrely elegant concepts of computation”</p><p>FRACTRAN was devised by John Conway, creator of the Game of Life, a cellular automaton sometimes referenced in esolangs. A set of rules for the progression of black and white pixels, it takes on complex behaviors under the right conditions, serving as a metaphor for the rise of biological complexity from simple chemical traits, and also of the rise of computational systems from simple rules (e.g. see this insanely complex implementation of Tetris).</p><p>FRACTRAN, similarly, is simple and powerful. It was developed before the concept of esolangs emerged, first published at Proceedings of the 1972 Number Theory Conference held at the University of Colorado. It is a and is a theoretical model for computation and does not require or particularly encourage use of a computer to use.</p><p>A FRACTRAN program is a sequence of comma-separated fractions. The input to a program is a single number. It is best understood with a simple example, for instance an adder.</p><p><b>A FRACTRAN ADDER</b></p><p>
+            In FRACTRAN, we treat each number as the product of its primes. If we start with the number 144 (meaning this is the input to our program), we can factor this to 2 x 2 x 2 x 2 x 3 x 3, or&nbsp; 2^4 *
+
+            3^2. In FRACTRAN, the two primes (2 and 3) are variables, and their exponents are their values. We can think of our input this way:<br>
+        </p><blockquote><p>var_2 = 4<br>var_3 = 2</p></blockquote><p>Serving this to the program <b>3 / 2</b>, in the first iteration we get:</p><p>144 / 2 * 3 = 216 or 2^3 * 3^3, or:<br></p><blockquote><p>var_2 = 3<br>var_3 = 3</p></blockquote><p>We have multiplied by 3 (the numerator) and divided by 2 (the denominator), incrementing the exponent of the numerator and decrementing the denominator.</p><p>Running our value (now 216) through this fraction again gives us <b>2^2 * 3^4</b>, or <b>324</b>. We keep doing this until the value can no longer be divided by 2, at which point we stop, giving us the final value of <b>3^6</b>, or <b>729</b>.</p><p><i>So long as we give this program a number that’s a multiple of both 2 and 3, it will add the exponents of 2 to the exponents of 3.&nbsp;</i></p><p>It may seem like this is a hard way to add two numbers, but we’ll next see how more complex algorithms are enacted in FRACTRAN. It’s important to keep in mind that even though the input is a single number, it’s a set of variables (the primes), with their exponents the data. Also, there’s nothing special about 2 and 3, we use them because they’re the two lowest prime numbers, giving us the smallest possible numbers that will work. If we were to create the program 5 / 3, we could give it input in the form of numbers with exponents of 5 and 3. There’s no magic here.<br></p><p>At this point we’re ready to look at the complete set of rules for FRACTRAN:</p><ol><li>For the input value, we consider each fraction in order&nbsp;<br><br></li><li>If multiplying it with that fraction will give us an integer (if our number is a multiple of the denominator), we multiply it and go back to the beginning of the list<br><br></li><li>We stop when there are no more fractions that will give us an integer result</li></ol><p>Let’s look at an example with multiple fractions to see how to implement algorithms.</p><p><b>MULTIPLICATION</b></p><p>The multiplication program looks like this:</p><blockquote><p><b>385/13, 13/21, 1/7, 3/11, 7/2, 1/3</b></p></blockquote><p>(This example is taken from Mark Chu-Carroll’s post here)</p><p>This, factored is:</p><blockquote><p><b>(7 * 11 * 5)/13, 13/(3 * 7), 1/7, 3/11, 7/2, 1/3</b></p></blockquote><p>For the first fraction, if our input can be divided evenly by 13, it is so divided, and also multiplied by 7, 11, and 5. So in other words, if it has a var_13 (an exponent for the prime number 13), that expinent is decremented, and var_7, var_11 and var_5 are all incremented:</p><blockquote><p>if (var_13) { var_13–; var_7++; var_11++; var_5++;}<br>elsif (var_3 &amp;&amp; var_7) { var_3–; var_7–; var_13++;}<br>elsif (var_7) var_7–;}<br>…</p></blockquote><p>You can see how this is a lot more elegant written as fractions!</p><p>If this is hard to parse, start by considering the fraction 7/2; we’re transferring 1 from var_2 to var_7, but only if we can’t divide by 7 (the third fraction), or any of the other steps that come before it.<br></p><p>Then consider the first two fractions. Once we have a multiple of 7 in the numerator (which we think of as var_7 &gt; 0), the activity trades back and forth between the second fraction and the first. We add a 13, then immediately get rid of a 13 – this trades control back and forth between the two steps, initiating a decrement of the 3 (which servers as our counter), increments the 5 (our output of the program) and the 11 (our temporary storage for what used to be in the 3).&nbsp;Once the counter (3) is exhausted, we hit the 3/11 fraction repeatedly, which transfers all of the value of 11 back to 3. Since we never re-incremented 2, we end up with one less value for 2, and 3 is “refilled” back to its original value. This puts us back to the start state, with 2 holding all of what was in 3, and 3 only decremented by one.</p><p>If brainfuck makes sense to you (and if it doesn’t, <a href="../82415868870/brainfuck-programming-how-to-write-the-number-36.html">you might start here</a>), you can see intuitively how this <i>might</i> be Turing Complete. We can increment and decrement variables, we have conditionals, program flow, and as many variables as we need, even if these are tied to together in a way that’s awkward for any practical programming.<br></p><p><b>GOING FURTHER</b></p><p>Conway used this system to build a prime number generator, explained here on Wikipedia. However, primes are so much a part of FRACTRAN. What if we want to break away into other types of programs?</p><p>For an astonishing example of the language in action, view this FRACTRAN interpreter written in FRACTRAN itself! Because so many variables are used, we get into some crazy looking numbers:</p><blockquote>
+            <p>…</p><p>
+
+                19228559906211175423748638669483 &nbsp;/ &nbsp;5651764272356337957182213393<br>4280910472672668030345419 &nbsp;/ &nbsp;2731640537629936180368397<br>4280910472672668030345419 &nbsp;/ &nbsp;2813898220067976918547621<br>8966417131313137949541572921 &nbsp;/ &nbsp;5923379139766748474650011041<br>5278557919448419272929 &nbsp;/ &nbsp;2779624185718793277639611<br>5069368041531044665019 &nbsp;/ &nbsp;3427403434918364090801<br>4229240572827076502191649 &nbsp;/ &nbsp;3317872566159321829577<br>5306449903170735887317 &nbsp;/ &nbsp;3509551586487645786719<br>4273700394880449185526121 &nbsp;/ &nbsp;2809690409193150378345599<br>19681282009657046999693471426063 &nbsp;/ &nbsp;5765772982091987384129572961<br>
+
+                …
+            </p>
+        </blockquote><p>
+            While FRACTRAN takes some getting used to, it’s a great illustration of the abstractness of computation, the way it can arise in systems removed from&nbsp;
+
+            binary, digital systems. We return the algorithm to its roots in math, in a way that can be carried out by hand.
+        </p>
+    </div>
+
+
+</div>
+
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/166814604598/an-intro-to-fractran by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:14 GMT -->
+</html>

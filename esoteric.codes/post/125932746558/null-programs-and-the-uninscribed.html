@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/125932746558/null-programs-and-the-uninscribed by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Null Programs and the Uninscribed </title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Null Programs and the Uninscribed
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-08-05">2015-08-05</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="3264" data-orig-height="772" class="tmblr-full"><img src="../../../78.media.tumblr.com/bce8be8fbdb1e8235b7915c799cbf84c/tumblr_inline_nshltlczcb1qaohdj_500.jpg" alt="image" data-orig-width="3264" data-orig-height="772" width="500" height="118"></figure><p><i>From John Cage’s 4′33″, 1982 reconstruction of original 1952 score</i></p><p><b><br></b></p><p><b>The Zero-Byte File</b></p><p>In his fascinating paper <i>No Code: Null Programs</i>, Nick Montfort looks at how the empty text file functions as code (and asks whether the lack of code can itself be a program). This is considered in light of uninscribed or erased works in other media: Rauschenberg’s <i>Erased DeKooning&nbsp;</i>drawing, Nam Jun Paik’s endless loop of clear 16mm film leader, <i>Zen For Film</i>, and most famously, John Cage's&nbsp;<i>4'33"</i>. Those works have none of what we ordinarily consider content for their respective media (drawing, film, or musical performance), yet in their refusal, none is truly silent: in Zen For Film, the scratches and dust on the leader become prominent, as do background and room noise in Cage’s “silent” work.</p><p>When we decide to compile/interpret an empty file as various languages (a C program, a JavaScript program, etc), we find that some languages consider the empty file valid code, others reject it, and in many the resulting behavior is undocumented, differing across compilers or operating systems. The null program in C is, in some systems, compilable. It was presented as a quine at the International Obfuscated C Contest in 1994, where it won for “worst abuse of the rules.” A quine prints its own source code: this null quine printed nothing, which is its own code. It was then disqualified for all subsequent years.</p><p>Montfort also looks at compiled code of zero size, with the zerobytes demo. Demos are prized for packing audiovisual effects in tiny code files – the smallest, zerobytes.com, creates this perfectly valid audiovisual effect, which is not a bad accomplishment for something that barely exists:<br></p><figure data-orig-width="905" data-orig-height="337" class="tmblr-full"><img src="../../../78.media.tumblr.com/26234688b2ce63166bae5b8899726954/tumblr_inline_nshk0nQ1WR1qaohdj_500.png" alt="image" data-orig-width="905" data-orig-height="337" width="500" height="186"></figure><p><b><br></b></p><p><b><b>The Non-Performative Program</b></b><br></p><p>Zero byte files can be valid when read as text, but not so in some other formats – the reason the zerobytes.com file fails is because it is an executable without an entry point. Likewise, a properly constructed “contentless” gif, as he points out, opens with six bytes of header to mark it as that particular medium. For the gif, this might raise concerns about content vs structure (is that header properly “content”?). Here we give up the purity of the blank text file.&nbsp;</p><p>This content vs structure question come up on esolangs.org itself, where there was discussion over whether an otherwise empty program, with just an entry point might still be considered null, or if the blankness of the textual program is itself essential. This <b>minimal C program</b> is similar to the gif which has a header but no data:</p><blockquote><p>main() {}</p></blockquote><p>We can think of this is a Non-Performative Program: one that is valid within the language, but provokes no actions to be carried out. (using “performative” in the J.L.Austin sense of a text that causes things to happen in the world, er, computer). We might also think of this in terms of the code being a&nbsp;blank text (the empty file) vs a score for a blank performance (our minimal C program). This was a question dealt with by Cage as 4′33″ developed: the 1952 score (excerpted at the top of this post) used more conventional music notation, but as the work matured, was eventually replaced with the more well-known textual score (TACET I, TACET II, etc).</p><p>
+            In esolangs,
+
+            creating a non-performative program can be a weird experience, involving a non-trivial program file. The tension is no longer between the textual instructions and its performance (as with the null program), but between the concrete syntax (the actual text of the code) and the abstract syntax of instructions behind it.&nbsp;
+        </p><p>
+            <b>Malbolge,</b>&nbsp;the wicked language of self-modulating code
+
+            (created by Ben Olmstead, <a href="../101675489813/interview-with-ben-olmstead.html">interviewed previously</a>) is similar to a number of other esolangs in that it needs a single, seemingly random character to create the non-performative program. We simply need the END instruction (without it, the program refuses to quit). It happens to be a capital Q (perhaps think of it as the quit command!):
+        </p><blockquote><p>Q</p></blockquote><p>Although my first attempt at this program resulted in a segmentation fault, this is an easy Malbolge program to figure out by hand – as almost no other functional Malbolge programs are. Feel free to experiment with the language here. If we wanted to do a more sophisticated non-performative program, we could create an ever-increasing string of NOPs leading up to the END. Here are the first few:</p><blockquote><p>DP</p><p>DCO</p><p>DBCN</p></blockquote><p>In <b>Piet</b>, white blocks are ignored; so a GIF of all white pixels (a blank canvas!) is non-performative. An all-black GIF would likely work as well, although less efficiently, as the program would first look in several directions for color blocks that would give it a way to move forward (black pixels are blocking elements in the language).<br></p><p>Likewise, my language <b>Light Pattern</b> uses photographs, so giving it an empty file is not valid. An empty program (video can be seen here) can be made up of any photographic content that follows the correct pattern to create at least a single NOP. The example uses the most minimal content possible: photographs of pure red, green, or blue pixels at the exposures needed for a NOP to manifest. It actually uses the maximum number of these photos possible to create a very long string of NOPs (which get compiled away), until the exposures get too dark in the sequence to continue (all black).</p><p>Also, I realize I bring up this language all the time, but have to mention&nbsp;<b>Unnecessary</b> (<a href="../102380982203/unnecessary-purely-conceptual-languages.html">previously discussed here</a>&nbsp;among other places, created by Keymaker, <a href="../84939008828/interview-with-keymaker.html">interviewed here</a>). There, a null program (empty file) is just as invalid as any other program file. The only valid Unnecessary program is actually smaller than a zero byte file: a file that does not exist on the file system. In a sense, every machine thus has an infinite number of Unnecessary programs.</p><p>***</p><p>Montfort’s paper can be found here.</p><p>
+
+            Also of interest: the old&nbsp;Cats Eye page (by Chris Pressey, <a href="../118780138572/interview-with-chris-pressey.html">interviewed previously</a>), listed the basic features of blank files: they are self-describing (the null quine), belong simultaneously to many languages at once (polyglots).
+
+            <br>
+        </p>
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/125932746558/null-programs-and-the-uninscribed by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:52 GMT -->
+</html>

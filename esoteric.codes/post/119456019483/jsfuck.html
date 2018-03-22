@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/119456019483/jsfuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSFuck</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                JSFuck
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-05-20">2015-05-20</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="1229" data-orig-height="871" class="tmblr-full"><img src="../../../78.media.tumblr.com/8a1df4f269a1819023112ac7383de025/tumblr_inline_nonudsNN7X1qaohdj_500.png" alt="image" data-orig-width="1229" data-orig-height="871" width="500" height="354"></figure><p>JSFuck (created by Martin Kleppe) is not a framework, nor is it an esolang exactly, but an esoteric coding style for JavaScript. While Perl has an entry on esolangs&nbsp;(with particularly choice example code), JS is similarly abusable, even if you have to dig a bit deeper to see its syntactic weirdness and eccentricities. Luckily, we have JSFuck to show us the way. Everything written in JSFuck is valid JavaScript, and works in the browser with no additional framework or plugin. It uses just six characters and resembles brainfuck in appearance.</p><p>Here is the letter “a” in JSFuck:<br></p><blockquote>
+            <p>
+
+
+
+                (![]+[])[+!![]]
+
+                <br>
+            </p>
+        </blockquote><p>To explain how this works, we first need to understand that JavaScript is an untyped language (for those who consider it weakly typed, this discussion explains it well). What this means is you don’t specify the kind of data a variable will hold when declaring it; it’s left to the interpreter to determine. When we mix types we often invoke implicit conversions. Let’s say we’re working with a boolean value (<i>true</i> or <i>false</i>). The <i>!</i> operator converts such a value to its opposite: true to false and vice versa – it’s called the “not” operator (the action of using it is to negate). Take this command:</p><blockquote><p>![]</p></blockquote><p>We are attempting to negate an empty array, forcing JS to treat the empty array as a bool. Since it is not a “falsey value” like <i>null</i> or 0 or <i>undefined</i>, JS determines it’s true, and the negation then makes it false. What valid reason exists to negate an empty array, I have no idea, but this is what the language lets us do.&nbsp;</p><p>So, let’s say we want true, we simply negate false, like so:&nbsp;</p><blockquote><p>!![]&nbsp;</p></blockquote><p>JSFuck gets a lot of mileage out of this. From true and false, we get 1 and 0 by converting them to integers with the unary + symbol. This is not the + operator for adding two things, its actual intended usage is to convert something to a number (why???). Applying it to the empty array like so:&nbsp;</p><blockquote><p>+[]&nbsp;</p></blockquote><p>gives us zero. To get the number one, we do the same thing to true:&nbsp;</p><blockquote><p>+!![]&nbsp;</p></blockquote><p>Or simply take the zero we already have, negate it, and then turn it back into a number:&nbsp;</p><blockquote><p>+!+[]</p></blockquote><p>With zero and one, we now have a model for how to produce the other numbers. But things get more interesting when we want to produce letters. How do we write the letter “a”? JSFuck has a clever pattern for this. It will produce the word “false” (by converting boolean false to a string) and then grab the second letter. Here is how it’s explained&nbsp;on the esolangs.org site:</p><ul><li><code>"a"</code>: from string <code>"false"</code>, second character (index 1 counting from 0)…<br></li><li><code>"false"[1]</code>: <code>"false"</code> can be made from <code>false+[]</code>, i.e. the boolean constant false plus an empty array…<br></li><li><code>(false+[])[1]</code>: we write false as <code>![]</code> (negation applied to an empty array)…<br></li><li><code>(![]+[])[1]</code>: 1 is a number, we can write it as <code>+true</code>…<br></li><li><code>(![]+[])[+true]</code>: since false is <code>![]</code>, true is <code>!![]</code>…<br></li><li><code>(![]+[])[+!![]]</code> &lt;&lt;&lt; <b>that’s it!</b><br></li></ul><p>A JSFuck converter can be found on github. There, we can see how to get the other letters and symbols. Most use the same strategy, grabbing letters from keywords (we get the letter&nbsp;“n” from the string&nbsp;“undefined”,&nbsp;“y” from “Infinity”, “O” from “Object”, etc). You can find them in the jsfuck.js file.&nbsp;</p><p>At JSFuck.com you can try the converter directly.</p><p><br></p><p>h/t Rich of <a href="http://prostheticknowledge.tumblr.com/">prostheticknowledge</a>​</p>
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/119456019483/jsfuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:04 GMT -->
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/125170289075/time-out-the-language-that-makes-you-wait by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Out: The language that makes you wait</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Time Out: The language that makes you wait
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-07-27">2015-07-27</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <figure data-orig-width="700" data-orig-height="477" class="tmblr-full"><img src="../../../78.media.tumblr.com/a19d0c805a2fc54ccfb0d8dbd7445be1/tumblr_inline_ns4gim9lpY1qaohdj_500.gif" alt="image" data-orig-width="700" data-orig-height="477" width="500" height="340"></figure><p><i>TimeOut: Hello World</i></p><p>In <b>Time Out</b>, each command tells the interpreter not to do anything, for a specific amount of time. Every line is in this format:<br></p><blockquote><p>timeOut.Set(479);</p></blockquote><p>This is the only valid line of code, a time out set for a certain number of steps (here 479). Meanwhile, the interpreter cycles through a list of commands, at a configurable speed (default step rate is 30 milliseconds). Think of it as a clock with a different command at each tick. When the time out is up (479 * the step rate of 30 = &nbsp;a little more than 14 seconds), whatever command the interpreter is pointing at fires: it might be a command to pop from the stack, print to the screen, etc. Then it reads the next line of code asking it to wait again, and so on.</p><p>It was inspired by David Morgan-Mar’s Whenever, a language which disrupted the flow of code to much different effect (there, programmers have to construct code which might be run in any order). Time Out offsets the action of the interpreter from the present of code – but it does this with its execution environment (the Web) in mind.</p><p>Time Out runs in the browser (it’s written in JS). If other processes (or a slow browser) cause the current time out to last too long, we might miss the command we want and execute a different one, further in the cycle. In effect, it means that the programmer is forced to run the Time Out program in the active tab and not have other processes running that might interfere with it. The experience of using Time Out is one of staring at a single active tab in the browser, waiting for it to execute – if you get bored and bring up another program, it may crash. If you open another browser tab, it almost certainly will.&nbsp;</p><figure data-orig-width="700" data-orig-height="477" class="tmblr-full"><img src="../../../78.media.tumblr.com/91801a245370557895897da5971c4e53/tumblr_inline_ns4gja49N81qaohdj_500.gif" alt="image" data-orig-width="700" data-orig-height="477" width="500" height="340"></figure><p><i>Hello World attempt</i><br></p><p>The “speed” of the Time Out interpreter is configurable – 30 ms is the speed which my computer can run Time Out in Chrome without messing up. People with shorter attention spans or faster machines can configure it accordingly.</p><p>Time Out can be run here. The code is also on github.</p><p><i>NOTE: Occasionally I build languages as research / thought experiments for this blog. This is one of those languages.</i></p>  </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/125170289075/time-out-the-language-that-makes-you-wait by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:08 GMT -->
+</html>

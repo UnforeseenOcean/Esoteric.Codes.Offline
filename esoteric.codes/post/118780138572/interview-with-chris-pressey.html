@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/118780138572/interview-with-chris-pressey by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview with Chris Pressey</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Interview with Chris Pressey
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-05-12">2015-05-12</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <p><i>Very excited to present an interview with Chris Pressey, who has been making esolangs since before they had a name. He created the Befunge language (one of the very first to show the potential of esolangs) and managed the mailing list where much of the early &nbsp;discussion took place. Since then, he has created a wealth of languages and experiments, including GEMOOY.</i></p><figure data-orig-width="800" data-orig-height="621" class="tmblr-full"><img src="../../../78.media.tumblr.com/2bc02abfb141f2e15f72feda3090e7c2/tumblr_inline_no774cnwvL1qaohdj_500.jpg" alt="image" data-orig-width="800" data-orig-height="621" width="500" height="388"></figure><p>
+            <b>
+
+                »
+
+                I want to start at the beginning, but what was the beginning for you&nbsp;with esolangs? The esolangs wiki describes you as a “member of the&nbsp;Esolang community from the time of his invention of Befunge in 1993 to&nbsp;present” Was there a community in 1993? &nbsp;What did it look like, did it&nbsp;revolve around IRC at that point? Did Befunge and the other 1993&nbsp;languages come out of discussions about language as part of that&nbsp;community, or was it before those discussions / that community&nbsp;materialized?
+            </b>
+        </p><p>That description from the wiki is taking a few liberties. &nbsp;It would be more accurate to say that Befunge-93 was my first esolang (the two languages I designed before it probably do not “count” very much as&nbsp;esolangs) but there wasn’t really anything like a dedicated community at the time, and it certainly didn’t get the name “esolang” until about half a decade later.</p><p>But just because there wasn’t a dedicated community doesn’t mean there wasn’t a community, after a fashion.</p><p>To try to give some context: at the time I was very interested in doing creative things (like writing music), and in doing things with computers, and (thus) in doing creative things with computers – which would’ve included music and graphics and games, of course, but also not limited to those things. &nbsp;Looking back, it seems to me that everyone was a bit more open to the creative potential of computers back then; home computers were still pretty new, and we knew that we didn’t know terribly much about their possibilities yet.</p><p>I had an Amiga 500 at the time, and I think its user base was a good example of that. &nbsp;The sound and graphics capabilities seemed to attract people who were attracted to a certain kind of creative computing. &nbsp;The machine also had enough memory and computing power to run comparatively powerful development tools, like C compilers. &nbsp;Reflecting this, a typical Fred Fish floppy disk might’ve contained icons or pictures or demos or “display hacks”, alongside “serious” utility programs and their source code.</p><p>I also had a 2400 baud modem. &nbsp;I was a regular BBS user, and eventually ran my own BBS. &nbsp;(The Internet did exist at the time, but it was still virtually unknown to everyone outside of research and the military.) This put me in touch with other computer users in Winnipeg, many of whom were also doing creative-things-oftimes-with-computers – for example, there was a large overlap with the ham radio community, especially those hams whose interest in electronics and communication went beyond solely radio, into homebrew computers and such.</p><p>Around that time I got interested in programming languages – not really as a creative endeavour, more out of curiosity. &nbsp;A certain technical curiosity that is probably shared by every programmer who has reached a certain point in programming – the one where you start to wonder just exactly *how* the computer is turning the programs you’re writing into actions.</p><p>Through one of the contacts I had made through BBS'ing (Jason Goga), I learned about the FORTH language and just how simple it is to implement (I had written a recursive-descent parser as a course exercise earlier, but I didn’t have a really good understanding of it.) &nbsp;I was also exposed to the wonderful word “Befunge” (a typo made by Curtis Coleman) during a BBS chat session, whence I decided immediately that I *must* design and implement a language named that. &nbsp;(I’m not entirely certain whether I was aware of the relevant Donald Knuth quote at the time.)</p><blockquote><p>Donald Knuth: &nbsp; “The most important thing in the programming language is the name. A language will not succeed without a good name. I have recently invented a very good name and now I am looking for a suitable language.”</p></blockquote><p>Due to the fact that long-distance calls cost money while local calls were free, most of my BBS exchanges were local affairs. &nbsp;But thanks to disk clubs like Fred Fish and relay networks like FidoNet, Winnipeg wasn’t totally cut off from the rest of the world. &nbsp;One of the local BBS'es carried files from Aminet&nbsp;and, among those files, I found Wouter van Oortmerssen’s FALSE distribution and Urban Müller’s brainfuck distribution.</p><p>And frankly, these two languages opened my eyes: yes, it *is* entirely possible to design programming languages with unorthodox goals – there is no actual requirement that they must be “good for programming” – so why not do just that? &nbsp;Is the fact that they’re interesting and/or challenging and/or fun to try to program in, not sufficient? &nbsp;The idea that a language can be very, very simple and still be able to express any computation that a more “normal” language can (so long as you’re willing to phrase the computation on the language’s terms, of course) was also intriguing.</p><p>Shortly after that, the inspiration for the actual design of Befunge-93 struck, and I threw it together and put it up on my BBS. Several users downloaded it, and had fun writing programs in it, and sent some of those programs back to me – and they have been included as example programs in the distribution ever since.</p><p>And that’s pretty much what the community looked like, back then. &nbsp;There was not very much of what you’d call discussion – brainfuck as a response to FALSE, Befunge as a response to both brainfuck and FALSE, and writing weird programs as responses to there being weird languages, is the level on which the “discussion” took place, I think.</p><p>
+            <b>
+                »
+
+                I hadn’t made that connection between early esolangs and Amiga culture, but they both take part in this DIY approach to computing; this idea that anything a computer can do might be a place to intervene and explore directly through code. I wonder if esolangs still call back to that era in a way. Programming now, especially in an IDE using corporate languages (C#, etc), can feel like one is functioning in a limited sandbox, and with an approach to code determined more heavily by the language or set of libraries. Designing esolangs can offer a way to build alternative structures. Does that make sense?
+            </b>
+        </p><p>Yes, I think that makes a lot of sense. I noted something like this on the #esoteric IRC channel once, I think. There are a certain number of programmers who simply love programming, but for whom mainstream software development doesn’t provide a lot of existential reward. When you’ve been optimizing queries and producing custom reports all week, programming in an esolang can be a nice break from that. It returns to the basic challenge of composing a program.&nbsp;(In this respect, it’s very similar to code golf, and there is a significant&nbsp;overlap.)</p><p>On the design side, the dynamics are probably similar. If you have any interest in programming languages, and you use the same language day in and day out, you will probably start to tire of it, and start looking for something a little different (or maybe a *lot* different!) I know some of my esolangs have started out with me shooting myself in the foot with some idiosyncrasy lurking in a production language, wondering how one could design a language which avoids that particular trap, and in the end going down the rabbit hole of making an esolang out of it instead of trying to design a “better” language.</p><p>But I don’t want to gloss over the fact that a lot of esolang comes from people who don’t have programming as their day job, too. I get the impression that it’s not uncommon for a student who has recently learned programming and who wants to explore just how far programming goes, to find themselves amidst esolang — although this sometimes seems to be just a phase in their exploration which eventually passes.</p><p>I’m not sure how much esolang calls back to the past. Certainly there is some overlap with retrocomputing, and a lot of esolangs are simple enough that they can be implemented on older architectures without too much pain. And in a sense, programming and computer science were themselves a lot more “esoteric” back then. But I think it harkens more to a desire to build or explore “alternative structures” (for whatever reason) than it does to the past per se.</p><p>
+            <b>
+
+                »
+
+                Also, wasn’t brainfuck originally written for the Amiga?
+            </b>
+        </p><p>Yes, it was.</p><p>(I should note that I tried to not over-emphasize the role of the Amiga in my previous response; there were certainly people doing creative things on IBM PCs and Macs and Ataris and such as well. On the other hand, as far as I know, none of those companies got Andy Warhol to paint digital pictures of Debbie Harry using their machines. Take that for what you will.)</p><p>
+            <b>
+
+                »
+
+                I’m curious about the origins of brainfuck and how much of what the&nbsp;&nbsp;language has come to symbolize (its minimalist model for Turing&nbsp;Completeness, its strange method of representing constants, etc) was&nbsp;intended by Urban Muller; it seems he dropped out of whatever there was of an esolang scene pretty early. The esolang wiki describes brainfuck’s goal to make the smallest possible compiler. But he did name the language “brainfuck” and gave it the unusual set of commands (all punctuation), which indicates some of the weirdness of the language was intended.
+            </b>
+        </p><p>I get the distinct impression brainfuck was a direct answer to FALSE. </p><p>According to the description on Fred Fish disk 885, Wouter’s only goals with FALSE were “a working compiler in just 1k (!) and designing a language that looks cryptic and fuzzy”. I’m pretty sure Urban saw FALSE when it was uploaded to Aminet and said “Oh, you like small compilers, do you? Well, how about this one, it’s less than 256 bytes!” (Of course, this is complete conjecture. I don’t actually know.)</p><figure data-orig-width="420" data-orig-height="311" class="tmblr-full"><img src="../../../78.media.tumblr.com/643f6f18c88dba6fced6899d8a64fa52/tumblr_inline_no77imjtDT1qaohdj_500.png" alt="image" data-orig-width="420" data-orig-height="311" width="420" height="311"></figure><p>
+            <b>
+
+                »
+
+                What were you setting out to do with Befunge, and once you had the idea, how long did it take to put together? Was difficulty of compilation part of its goal? It seems that Befunge created somewhat of a tradition in esolangs of writing stack-based languages.
+            </b>
+        </p><p>Well, as I mentioned, for a while, Befunge was a name in search of a language. It might’ve been been this way for as much as a month; I don’t really remember.&nbsp;It certainly had a few false starts during that time. It sounds kind of strange, but the main thing I was setting out to do was just to find it!</p><p>The idea that finally struck was roughly “What if you had BASIC, but instead of having line numbers, you drew an arrow to the line you wanted to GOTO?”<br>which somehow quickly dovetailed into the stack-based paradigm I had recently learned about, put into a grid. Once this idea crystallized, Befunge-93 was implemented and documented in a matter of days. (Which is rare, for me; other esolangs I’ve worked on have stayed in my “sketchbook” for years before they ever saw the light of day. I also remember exactly where I was when the idea came to me, which is also rare.)</p><p>Difficulty of compilation was indeed an explicit goal. This was prompted by an offhand remark made by Shawn Vincent around that time, which was something along the lines of “compilers are always better”. Being the sort of person who loves finding counter-examples to sweeping statements, I couldn’t resist aiming for something rather contrary to that sentiment.</p><p>Since the stack-basedness of Befunge came from FORTH and FALSE, I don’t think it established that tradition so much as it continued it — but more generally, I don’t think it’s done out of a sense of tradition as much as it’s simply one of the easier paradigms to design in and implement. Many conventional languages can be implemented by translating the program to stack-based code “under the hood”, but if you present the entire language that way, you don’t have to bother translating it first.</p><p>I think if there’s been a notable influence from Befunge on subsequent languages, it’s been its 2-dimensionality (Wierd, PATH, Befreak, and so forth.)</p><p>About minimalism.<br></p><p>In all programming language design, not just esolangs, there are tradeoffs between the complexity of the language definition, and the length of programs in the language.</p><p>You can often make a language simpler by observing that what is done by one instruction can alternately be done with a sequence of other instructions. &nbsp;So you can remove that instruction, with no loss other than that programs will be longer.</p><p>And there is definitely a strain of esolang that concentrates on this, sometimes taking it to the extreme, arriving at the territory of the “Turing tarpit”:&nbsp;</p><p>On the other hand, sometimes what people pursue is just the opposite: <br>you don’t care how complicated the language is, as long as you can write short programs in it. &nbsp;That generally takes you into the realm of “golfing languages”, which I’ll admit I’m less personally familiar with.</p><p>Of course, while these are both popular goals, neither one is a requirement of esolang design. &nbsp;Befunge, for instance, certainly isn’t minimal. &nbsp;And anyone who likes minimalism in particular, when presented with a language that isn’t minimal, will often think about how it could be made simpler. &nbsp;I think there are a large number of esolangs that are the result of this process, actually.</p><p>
+            <b>
+
+                »
+
+                Was INTERCAL discussed much at that time? I noticed it was revived in 1990 with C-INTERCAL.
+            </b>
+        </p><p>I wasn’t aware of INTERCAL until relatively late — probably around 1997.</p><p>
+            <b>
+
+                »
+
+                So the Befunge mailing list grew out of the BBS, and that was where the early esolang discussions were taking place? This link from the esolangs wiki shows&nbsp;some of the back-and-forth that happened on the mailing list about Befunge itself (leading to the Wierd language).
+            </b>
+        </p><p>“Grew” is a bit of a leap, because I think I was the only person who was both on my BBS and on the mailing list I started for Befunge when I got on the Internet proper. At the beginning, discussion on the mailing list was about Befunge (at least nominally) and some of it was sharing programs written in Befunge, and some of it was discussing how the Befunge language itself should evolve. These latter discussions eventually resulted in a draft for a language called “Befunge-97”. The specification was horribly broken in some respects, though, and it wasn’t finished until right around the end of 1997, so it was abandoned and superceded by Funge-98.</p><p>But there is only so much one can say about Befunge, and there were of course many interesting ideas tossed around about programming languages in general. This would’ve been when I became aware of INTERCAL.</p><p>I think most of the discussion about Wierd itself was in a private three-way email conversation separate from the list, but it was certainly sparked by things that were being talked about on the list.</p><p>At some point I put up a page called “Esoteric Topics in Computer Programming” on my website, which listed a handful of interesting languages that I had come across on the Internet, many of which were in roughly the same vein as Befunge: not designed for a “serious” purpose, but rather as a perverse counter-example to conventional programming, or just for fun, on a whim.</p><p>When the amount of discussion about languages other than Befunge increased (and probably sometime after Funge-98 was released, although I don’t remember the timing exactly,) I renamed the mailing list the “Esoteric Topics in Computer Programming Mailing List,” and that is probably when it would be safe to say that there was an explicit community.</p><p>I don’t know exactly where I got the word “esoteric” from, but I’m pretty sure I saw it in some programmer-culture context with a connotation of “hyper-obscure.” I certainly meant something like that by it, rather than “hidden teachings” or whatever, which is definitely not what I was going for.</p><p>At some point someone on the Esoteric Topics list (it might’ve been Russel B., but since I can’t even remember his surname exactly, I wouldn’t trust my memory here) coined the portmanteau “esolang”, in the pattern of words like “conlang” and “artlang”.</p><p>
+            <b>
+
+                »
+
+                Soon after Befunge came SMETANA, which reads as instructions all&nbsp;about how those instructions should be read, stripped of anything&nbsp;else: it’s not Turing Complete, has no I/O, essentially every&nbsp;operation is about the order its own code should be read. What drew&nbsp;you to create this language? It seems to tie into themes of yours:&nbsp;self-modifying code, meta-languages, etc.
+            </b>
+        </p><p>SMETANA came from a brainfart that I uncharacteristically bothered to write down on paper sometime in 1994, which I titled “An algorithm that’ll never fly”:</p><p>1. Swap steps one and two.<br>2. Flap wings.<br>3. Go back to step one.</p><p>which itself might have come from thinking about self-modifying code, but I really don’t remember the process that led up to it. &nbsp;I vaguely remember being more interested in music composition than programming languages at the time – which probably explains why, when I actually implemented it in Visual Basic, I named it after a composer.</p><p>Obviously I wasn’t really concerned with making a “real language” in this case as much as making a sort of simple dynamic system. &nbsp;I was rather surprised, years later, when Nikita Ayzikovsky showed (via Smallfuck) that it was possible to express any finite automaton in it.</p><p>That’s a far cry from Turing-complete, but still more powerful than I had expected. </p><p>At around the same time as SMETANA, I also put together something called Cyclobots, also in Visual Basic, which was similar in that it’s a simple dynamic system with interesting behaviour, but nowhere near what you’d think of as a programming language. &nbsp;(I recently revived it in Javascript)</p><p>
+            <b>
+
+                »
+
+                Tell me about your ventures into cellular automata. Were they an&nbsp;extension of what you were doing with 2D programming in the Funges? In&nbsp;particular, ALPACA as a meta-language for cellular automata. Gemooy&nbsp;seems related, with changing 2D patterns.
+            </b>
+        </p><p>Well, I knew about John Conway’s Game of Life as a youngster, and later learned more about cellular automata from various sources (including an Amiga magazine, IIRC.)</p><p>Up until the time that I learned (probably via the Esoteric Topics mailing list) that some CA’s are in fact as powerful as Turing machines, I thought of them as dynamic systems, sort of in the same bucket as SMETANA and Cyclobots – it’s fun to set up an initial state, and watch it evolve. &nbsp;But, solving problems with them? – No, that certainly wasn’t on my mind. </p><p>These days, I tend towards classifying them as languages, but that’s mostly out of convenience. &nbsp;It’s entirely possible to look at things the other way ‘round: a programming language is just a certain kind of rich dynamic system, one that happens to be more useful for what we commonly think of as programming.</p><p>ALPACA actually came indirectly from RUBE, which doesn’t have a whole lot in common with Befunge beyond them both being two-dimensional (and RUBE’s implementation borrowed code from Befunge’s, but that’s circumstantial.)</p><p>After I had implemented RUBE, I was kind of disappointed with it. &nbsp;There are edge cases where it does not do what you might expect, going from the description; for example, a dozer can fall onto (I think) a crate while it’s moving and actually disappear. &nbsp;So, the best specification for RUBE’s behaviour is actually the C program I wrote to interpret it, which is never a great situation for a language to be in.</p><p>Given this, I wanted to design a successor to RUBE whose rules would be well-defined. &nbsp;I decided it should be a cellular automaton, even though that would make it a little less interesting than RUBE’s “bully automaton” approach. &nbsp;It would have a large number of states and a large number of rules, but if I designed a meta-language for expressing these rules, they could be organized in a comprehensible fashion… and an interpreter could be automatically generated from those rules. &nbsp;That format ended up being ALPACA. &nbsp;(And that successor to RUBE ended up being REDGREEN.)</p><p>I’m pretty sure I was also generally interested in meta-languages at the time (MDPN dates from around the same time, I think) and the idea for ALPACA was one I felt I could actually implement. &nbsp;And after it was implemented, of course, that made designing and implementing more cellular automata quite a bit easier.</p><p>Gemooy is pretty much unrelated to all this, at least historically. &nbsp;It has distinguished locations where the action happens (the instruction and data pointers) as opposed to how things happen all over the place in a cellular automaton. &nbsp;It was largely influenced by 2-ill, which itself was influenced by 2L, which – well, you can follow the links in the Esowiki for the full story, but this is all sort of in Befunge-meets-Brainfuck Land. &nbsp;The most I can say is that when I designed Gemooy, I had no idea if it was Turing-complete or not, and didn’t really mind one way or the other – I was satisfied for it to be situated at a certain point in the design space which I found personally pleasing. &nbsp;In that sense, the design approach might’ve been closer to “dynamic system” than “real language”, yes.</p><p>
+            <b>
+
+                »
+
+                You use metaphor in a number of languages; RUBE as bulldozers moving&nbsp;crates, HUNTER as mice in a maze. Were these the starting places,&nbsp;inspiration for these languages, or a way of making them easier to&nbsp;understand later?
+            </b>
+        </p><p>I think when I use a metaphor in a language, the metaphor is usually the starting point. &nbsp;The world, after all, is full of dynamic systems which can be observed, modeled, approximated, quantized, simulated on a computer, and (if desired) extended to a point where they’re Turing-complete.</p><p>RUBE was certainly a case where the metaphor came from direct experience – I was working in a lumberyard at the time, and had the opportunity to watch a lot of people moving a lot of things around (with forklifts, not bulldozers… but bulldozers were easier to model!)</p><p>HUNTER on the other hand came from a metaphor that was already well-established – early robots that solved mazes were inevitably cast as mice. &nbsp;(I’m sure I’ve seen an illustration, in an Usborne children’s book, of such a robot *actually dressed up as a mouse*, with ears and buck teeth and everything.) &nbsp;HUNTER just plays up that metaphor a bit, treating its maze-solving units even more like real mice by having them eat cheese (or occasionally a dose of strychnine, whence they drop dead.&nbsp;That part was a nod to Douglas Adams)</p><figure data-orig-width="1200" data-orig-height="751" class="tmblr-full"><img src="../../../78.media.tumblr.com/5d76753d5c7249e4da30cc7319c01293/tumblr_inline_no7c49Foj91qaohdj_500.png" alt="image" data-orig-width="1200" data-orig-height="751" width="500" height="312"></figure><p>
+            <b>
+
+                »
+
+                And btw, is this connected to your Gemooy? What is going on here?&nbsp;looks interesting. [NOTE: link updated to correct documentation]
+            </b>
+        </p><p>I’ve known Gareth Jackson for a number of years, and in 2012 he told me he wanted to do something based around programming languages. What’s going on there is his GEMOOY project, where he attempted to use Gemooy as the basis for a visual 'manual generator’.</p><p>I’m not entirely sure how he ended up picking Gemooy, but I think I had recently mentioned it to him at the time. The relative simplicity of the language might’ve also factored into it.</p><p>In the GEMOOY documentation, he describes the process he used to generate these pictures from the example programs that are included in the Gemooy distribution — and I admit I don’t have a clear understanding of exactly how the process worked or, although I get the impression it was fully deterministic, and similar to how successive states of a cellular automaton are evolved.</p><p>As I see it, GEMOOY takes the emergent aesthetic of Gemooy (i.e. how the rules of the language influence the structure of programs in it) and adds its own rules, which results in another emergent aesthetic layered on top of the first one; and the combination of the two is yet again something else.</p><p>
+            The GEMOOY documentation used to be available along with
+            the images, but due to hosting issues, the link is currently broken, and it’s
+            in the process of being re-hosted. &nbsp;I’ll
+            update the Gemooy&nbsp;article on the esowiki with a link to it, when it’s back online.
+        </p><p>
+            <b>
+
+                »
+
+                Are there any languages I haven’t asked about that you’d like to comment on in?
+            </b>
+        </p><p>Um. Not really. Sometimes someone asks me what my favourite language I’ve designed is, and I can’t answer, because somehow it just doesn’t work like that… there’s something interesting in each of them.</p><p>I consider myself semi-retired from esolang at this point. But not entirely retired. There are one or two more I’d like to get down, <br>somehow, someday.</p><p>A lot of languages that I’ve designed, I don’t identify as esolangs, as well – it seems fairer to call them experimental languages. Sometimes, <br>someone creates an article for them on the esowiki anyway; I suppose my reputation precedes me, there.</p><p>So… yeah! None in particular.</p>
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/118780138572/interview-with-chris-pressey by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:42 GMT -->
+</html>

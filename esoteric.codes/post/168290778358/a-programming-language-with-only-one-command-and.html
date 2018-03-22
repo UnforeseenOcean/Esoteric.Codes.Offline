@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/168290778358/a-programming-language-with-only-one-command-and by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Programming Language with Only One Command</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                A Programming Language With Only One Command and the Anti-Imperialist Operating System Built on it
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2017-12-07">2017-12-07</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="719" data-orig-height="465" class="tmblr-full"><img src="../../../78.media.tumblr.com/5555f5c3d29ad7e6635afe9d6d07ce04/tumblr_inline_p0d5hzsm2p1qaohdj_500.png" alt="image" data-orig-width="719" data-orig-height="465" width="500" height="323"></figure><p>
+            DawnOS is a new operating system designed to not only do away with the inefficiencies of mainstream OSes like Windows, but “to liberate people from the imperialistic oppression" of Intel. Its creator, who goes only by Geri, built it on a <b>subleq</b> chip, with subleq a “One Instruction-Set Computer” (or OISC), a programming language/architecture with only a single command. This means the language lacks <i>goto</i> and <i>while</i> for flow control, or <i>if</i> for branching, or even <i>increment</i>, replacing them all with only a single operation – yet it is Turing Complete, capable of supporting an entire operating system.
+            I spoke with the creator of DawnOS, and the text of our interview runs below, but it may be helpful first to have an introduction to subleq.<br>
+        </p><p><b>The SUBLEQ language</b><br></p><p>OISCs (pronounced “whisks”) have commands that effectively combine some form of flow control, branching, and data manipulation. Often this happens by conflating the program and the memory space, effectively making it a self-modifying program. One can think of a OISC as an extreme form of RISC architecture (they are sometimes called URISCs for Ultimate Reduced Instruction Set Computer). In RISC architectures, the binaries break down to a much longer list of machine operations, but they take fewer transistors to run, and can be pipelined due to their uniform size.</p><p>Subleq’s one command gives it its name: “SUBtract and branch if Less than or EQual.” Each program is a list of numbers. Each number has two roles: it is a pointer to another place in memory, and it is also data that can being operated on. Subleq’s command reads three at a time, seeing each as a pointer: think of these as A, B, and C. Subleq’s command goes to the location pointed to by A, subtracts it from the location pointed to by B, and stores that at B. If B is less than or equal to zero, it goes to the location C, otherwise it progresses to the next three numbers. For example, with this program:</p><figure data-orig-width="1600" data-orig-height="719" class="tmblr-full"><img src="../../../78.media.tumblr.com/98eb8b72cf4f652569c94c7880bffd57/tumblr_inline_p0lhqpiy4u1qaohdj_500.png" alt="image" data-orig-width="1600" data-orig-height="719" width="500" height="224"></figure><p>We begin by subtracting 7 from 7 (the locations of A and B), and will store the result (0) in location B. Since the result, 0, is less than or equal to 0, it then jump to the data location listed in C, which is 6:<br></p><figure data-orig-width="1600" data-orig-height="719" class="tmblr-full"><img src="../../../78.media.tumblr.com/28b945184ab28e2ec503b7fe8d6bf67b/tumblr_inline_p0lhr1xxBL1qaohdj_500.png" alt="image" data-orig-width="1600" data-orig-height="719" width="500" height="224"></figure><p>Now we’re doing the same thing more or less, using memory locations 6, 7, and 8 as parameters A, B, and C. Since C holds the value of 0, it will jump control back to the first memory cell upon completion:</p><figure data-orig-width="1600" data-orig-height="719" class="tmblr-full"><img src="../../../78.media.tumblr.com/a5561a5a46fd965e358e05fc68efbba7/tumblr_inline_p0lhraIjd61qaohdj_500.png" alt="image" data-orig-width="1600" data-orig-height="719" width="500" height="224"></figure><p>At this point, memory cell #1 changes to 4; since this is more than zero, we don’t make the jump, and continue to the next line instead.<b>*</b></p><p>For a more in-depth example, </p><p>the “Hello World” program (actually prints “Hi”) on the esolangs wiki</p><p> gives an idea of how halting and printing to the screen could be handled, and a better sense of how to separate the “data” part of a program from the “code” part.</p><p><br></p><figure data-orig-width="1360" data-orig-height="708" class="tmblr-full"><img src="../../../78.media.tumblr.com/f6b82ed1c9ecac95bc71612d870cfca9/tumblr_inline_p0d5uhZD4f1qaohdj_500.png" alt="image" data-orig-width="1360" data-orig-height="708" width="500" height="260"></figure><p><i>DawnOS in action</i><br></p><p><b>DawnOS </b><br></p><p>While subleq may seem like it would quickly become a tragic tangle of pointers on a large project, Geri found its minimalism an antidote to the dystopia of the current computing world. He sees chip and OS development as essentially political acts in a market dominated by corporate inefficiency. DawnOS is a sophisticated and fully usable system, supporting touchscreen interface, onscreen and physical keyboards, sound input and output, and even has games like chess and amoeba. Even running on a virtual cpu (the physical cpu has not yet been created), it outpaces Windows and Linux. I spoke with Geri about his project; his English is sometimes a little rough, but his passion comes through clearly.</p><p>
+            <b>
+                »
+
+                How did you get started on this project? Why did you choose to work with the SUBLEQ for DawnOS?
+            </b>
+        </p><blockquote>
+            <p>
+                i
+                felt very unsatisfyed with both gnu/linux and windows. as the time
+                elapsed, the feeling started to become even stronger: linux and windows
+                became bigger and slower, linux now employs 5-10k worthless packages to
+                paint icons on the screen, meanwhile it not even supports icons for the
+                binaries. basically every linux software needs hundreds of packages to
+                downloaded separately from internet, as they are created by scripters
+                who randomly using external libraries to even perform an rgb to bgr
+                conversion, and not real programmers who have a clue about writing
+                programs. the newest kde needs 30 seconds to bring up the start menu on
+                my 1,6 ghz atom netbook. windows also stuck in its life - corporative
+                clowns have overtaken the development: they just randomly gathered
+                around some camp fire, and they decided they dont need a start menu.
+                this decision cost them probably very lot, as they placed it back in
+                windows10, too bad now it will show advertisements if you click on it.
+                they totally failed to enter the arm market, they probably had no
+                employer with the abilities of writing a application level x86 emulator
+                to run at least the existing applications, and they still were unable to
+                release one. these are serious problems, it indicates that both
+                gnu/linux and windows is on the brink of death. the
+                real creators who had technical or any other kownedge or sense left
+                these areas long time ago. there are also lack of technical knowledge at
+                linux side, for example, most linux distributions cant even detect the
+                cpu type, and force a kernel using PAE or SSE kernel on a 6x86 cpu,
+                which of course will crash at boot. not to mention linux kernel
+                instantly crashes if it runs out the ram, and this bug has not been
+                fixed in the last 20 years, even if it is technically possible to do so
+                on complex hardware… no real development on windows or linux has been
+                made in the past 2 decade.
+            </p><p>
+                this maybe sounds egoistic, but its actually true, and
+                after a day, where i experienced some very nasty problems from the
+                existing operating systems, i decided to create my own operating system.
+            </p><p>
+                i
+                had no clue what platform should i target. i originally planned x86,
+                but i realized how bad it is - after all, current x86 is the result of
+                approx 30+ years of work of 1 million hardware developer, all added his
+                own poop into it to have a cpu. some idiot waked up at morning, and
+                decided to add a MOV with his very own shitty prefixes and various
+                different encodings. another idiot waked up at morning, and decided to
+                add a floating point instruction which adds integers to floating point,
+                and stores the results in a floating point register. another idiot waken
+                up, and decided to add an opcode for adding 4 numbers simultanously.
+                1500 idiot waken up, added his own opcode, various memory addressing
+                modes, and todays x86 has been born, with one billion transistors
+                minimum just to have an operating system boot. not to mention every
+                opcode has random lenght, and encapsulates a semi-undocumented
+                segmentation, which creates an x86 so complex, that our x86 cpus are
+                actually risc cpus emulating x86. no corporation can make x86 processors
+                any more, they are so complex at least 20 years of work from a 10000 ic
+                design professional persons would need it to even have windows booted
+                (not to mention that a compatible io system also must be created). x86
+                is a form of opression, one of the main reasons we didnt had any real
+                step forwards.
+            </p><p>
+                of
+                course i didnt just magically realized this, i had to learn it on the
+                hard way (when i attempted to create an x86 emulator for debugging
+                reasons). then my attention come into ARM, but i had to learn it is now
+                went on the same complexity curve where x86 also went (nowdays arm cpus
+                are in fact not risc, they have variable instruction length
+                (regular+thumb), 3 different type of fpu, various internal work
+                methods).
+            </p><p>
+                then
+                i was avare i will have to create some instruction on my own, first i
+                talked with some persons active around comment sections of these topics
+                of cpus, and after speaking with them for long and long discussions
+                about it, i collected the usable ideas, and i decided to do some fixed
+                length risc/vliw hibrid that had like 256 piece of 64 bit registers,
+                every opcode were able to work on 2 or 3 registers, etc. i specificated
+                it, an fpga developer dude started to create it in hardware, i quickly
+                started to put together a compiler to see what is going on. the results
+                were tragic, the performance was extremely low, the fpga was not even
+                finished, but alreday comsumed millions of gates. we talked about it,
+                and we aborted the whole plan. such things are just not working.
+            </p><p>
+                somebody
+                had mentioned subleq for me years ago, so i decided to try it out. it
+                was suprisingly simple and efficient. first i expected it will have tens
+                of tousands more cycles than any other things to perform the same as
+                other architectures - but actually it offered very similar performance
+                to other architectures, as if you compile C code, the magical
+                performance of other architectures are also disappearing. subleq did
+                prety well, so i choosen that, and quikcly finished the initial version
+                of the compiler for it. the performance were suprisingly pleasing, the
+                binary code size is the only problem at the moment, but still not
+                brutally big.
+            </p><p>
+                subleq
+                is maybe or maybe not the most efficient urisc instruction, but its
+                simple enough, easy to understand and to work with it from both hardware
+                design and software design sides. this were basically the only logical
+                choice.
+            </p>
+        </blockquote><figure class="tmblr-embed tmblr-full"><iframe id="youtube_iframe" src="https://www.youtube.com/embed/Emn-UF4ArWk?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque" allowfullscreen="" width="500" height="281" frameborder="0"></iframe></figure><p><i>DawnOS boot time vs. Linux</i></p><p>
+            <b>
+                »
+
+
+                Does the SUBLEQ architecture mean the same binary will have many more machine instructions than on x86?
+            </b><br>
+        </p><blockquote>
+            <p>
+                yes,
+                i mentioned earlyer, it requires much more opcodes to perform an
+                operation. but in the fact, x86 also does. if you add two numbers on
+                x86, you have an instruction that first must be loaded to the ram, then
+                the instruction and segmentation must be loaded from ram and decoded,
+                then multiple instructions must be performed to add the segments to the
+                execution targets and sources, do the paging which is also comes in to
+                be added for the addresses, perform the actual operation, and issue a
+                write to memory. adding a number on subleq is also the same amout of
+                operation. the difference is the opcode itself, x86 have one
+                bloatwareish undocumented god opcode for his (and everything else),
+                meanwhile subleq needs a short houdini code to perform it, which results
+                bigger binary, but not necessary results difference of execution speed,
+                as internally very similar things will happen in the cpu.
+            </p><p>
+                small
+                boot time is due to the design of my operating system, and not have
+                connection with the instruction set (it would also instantly boot on
+                every other architecture).
+            </p>
+        </blockquote><p>
+            <b>
+                »
+
+
+                How much work did you need to do directly in SUBLEQ instructions to develop this? Did you find this challenging?
+            </b>
+        </p><blockquote>
+            <p>
+                after
+                i written the C compiler, basically none. i had to puzzle the compiler
+                properly together to detect when it must sync from stack (as there is no
+                hardware stack management or no registers on subleq), or what opcodes
+                should i insert when i see an array adressing, or some basic operation
+                like adding two numbers, etc. as subleq is very potato, i had to fix a
+                lot of bugs, and meditate very lot of them, but its not lot of subleq
+                binary code, as i wrote the more complex things in c itself
+                (multiplications, etc), and i also have written the operating system
+                fully in C. so basically there are a very few but extremepy challenging
+                things that i had to do directly in subleq, and all of them is in the
+                compiler code generator itself. there are no ,,inline subleq’’ in the
+                code anywhere.
+            </p>
+        </blockquote><p>
+            Finally, I asked Geri about what to call him on the site, and about his Hungarian roots.<br>
+        </p><blockquote>
+            <p>
+                Hungary
+                is not so spectacular point in this story itself. This contry -or its
+                people - gave nothing to me ever, not just regarding to this operating
+                system, but also in general. This is a small and dangerous
+                postcommunistic mafia contry, and i dont want to represent me in any
+                ways. I am just a citizen, who born and living here, but i dont belong
+                here, and i dissociate myself from it. If this would be an opearing
+                system olimpia, i would not start below the hungarian flag. <br>
+            </p>
+        </blockquote><p><b>* UPDATE: </b>The original version of this post (as pointed out on reddit) had an error in the last step of the example. </p>
+    </div>
+
+</div>
+
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/168290778358/a-programming-language-with-only-one-command-and by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:14 GMT -->
+</html>

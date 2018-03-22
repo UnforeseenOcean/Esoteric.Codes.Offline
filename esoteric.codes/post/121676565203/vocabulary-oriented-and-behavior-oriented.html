@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/121676565203/vocabulary-oriented-and-behavior-oriented by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary-Oriented and Behavior-Oriented Esolangs, Part 2</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Vocabulary-Oriented and Behavior-Oriented Esolangs, Part 2: Metaphor &amp;&amp; Myth
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-06-16">2015-06-16</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="800" data-orig-height="800" class="tmblr-full"><img src="../../../78.media.tumblr.com/d2a3183cc87092a33fb569605308e2a1/tumblr_inline_npyfrwp1bE1qaohdj_500.png" alt="image" data-orig-width="800" data-orig-height="800" width="500" height="500"></figure><p>
+            The languages FRACTRAN and Chef use metaphors/systems from outside programming to very different effect. FRACTRAN, created by John Conway, represents algorithms as a list of fractions, a translation of code into rational numbers. Chef, by David Morgan-Mar, represents code as a cooking recipe.
+
+            These two languages encapsulate the two types of esolangs explored in <a href="../113253944074/vocabulary-oriented-and-behavior-oriented-esolangs.html">Part 1</a>; FRACTRAN remains entirely within the logical sphere (a “behavior-oriented language”). At first, the idea of recipes may sound similar – recipes can be thought of as a type of recipe for the computer – Chef uses its system to complicate the logical space, bringing in aspects of natural languages drawn from food preparation into the code. This is what we’d described as vocabulary-based.
+        </p><p><b>How they work:</b><br></p><p>Chef’s recipes begin with a list of ingredients, then a list of instructions, usually culminating with baking time. In Chef, the ingredients hold individual data values. Cooking time and baking temperature are optional. The heart of the program is in the cooking method, which are step-by-step instructions, often involving excessive use of mixing bowls (which refer to the stack).&nbsp;</p><p>We can think of Chef as a simple cypher that hides a program in plain sight. The recipe is both the program and a parallel narrative to the program, adding additional information irrelevant to making its code run. Chef programming style encourages names meaningful to the recipe, not the code it represents (ingredients/variables like chicken and sugar, instead of x and y). Chef is a metaphor, but one that we can physically enact; a material mapping.</p><pre><code>Lobsters with Fruit and Nuts.
+
+This recipe prints "Hello, World!" in a most delicious way.
+
+Ingredients.
+72 g hazelnuts
+101 eggs
+108 g lobsters
+111 ml orange juice
+44 g cashews
+32 g sugar
+87 ml water
+114 g rice
+100 g durian
+33 passion fruit
+10 ml lemon juice
+
+Method.
+Put lemon juice into the mixing bowl.
+Put passion fruit into the mixing bowl.
+Put durian into the mixing bowl.
+Put lobsters into the mixing bowl.
+Put rice into the mixing bowl.
+Put orange juice &nbsp;into the mixing bowl.
+Put water into the mixing bowl.
+Put sugar into the mixing bowl.
+Put cashews into the mixing bowl.
+Put orange juice into the mixing bowl.
+Put lobsters into the mixing bowl.
+Put lobsters into the mixing bowl.
+Put eggs into the mixing bowl.
+Put hazelnuts into the mixing bowl.
+Liquify contents of the mixing bowl.
+Pour contents of the mixing bowl into the baking dish.
+
+Serves 1.</code></pre><p>FRACTRAN is very different. There are no flourishes, and the system it uses as a parallel for code is actually used in the execution of that code. A FRACTRAN program is a series of fractions, to be carried out on an integer (n) passed in. This is the formula for primes in FRACTRAN (from Wikipedia):</p><blockquote><p>1. for the first fraction f in the list for which nf is an integer, replace n by nf<br>2. repeat this rule until no fraction in the list produces an integer when multiplied by n, then halt.<br></p></blockquote><figure data-orig-width="461" data-orig-height="43" class="tmblr-full"><img src="../../../78.media.tumblr.com/b2a314f31d5d4b1b051d70b7253255e2/tumblr_inline_nq09asWpGm1qaohdj_500.png" alt="image" data-orig-width="461" data-orig-height="43" width="461" height="43"></figure><p>To get a sense of how it works, this Fractran program (of a single fraction) adds from one register to another:</p><blockquote><p>25/9</p></blockquote><p>
+            We read this by determining that the numerator’s prime factorization is 5 ^ 2 and the denominator’s is 3 ^ 2. In
+
+            FRACTRAN, each register is a prime number; the data held in that register is its exponent. In this program, we deal with registers 3 and 5. To run the program on a given input (a rational number), we factorize the input; does it have 3 as a factor? With what exponent? If it is a multiple of three, and its r3 has at least 2 in it (it can be evenly divided by 9), we subtract two from r3 and then add two to r5, and then we’re done; we’ve executed the code. That’s the whole of this program.&nbsp;
+        </p><p>The important take-away is that this series operations we carry out *is* the algorithm. This is the beauty of the language; nothing feels arbitrary. Its system of computation is based on simple principles – easy to understand in theory, even if confusing to use. There is no loss or gain of information translating between the two systems – while, for Chef, the excess of information is the key to it as a work.&nbsp;</p><p>But what if we were to actually execute the recipe for a Hello, World cake in Chef? There is at least one actual edible Chef program out there; the Hello, World cake by Mike Worth. The cake is an assemblage of instructions for the program made edible, the excess of the recipe metaphor taken to its logical result.&nbsp;</p><figure data-orig-width="800" data-orig-height="600" class="tmblr-full"><img src="../../../78.media.tumblr.com/4c603a24b8b2e0d36636e11e2ee06062/tumblr_inline_npyfxwFwIY1qaohdj_500.png" alt="image" data-orig-width="800" data-orig-height="600" width="500" height="375"></figure><p><i>Mike Worth, first step of Hello, World cake</i></p><p>But why bring together such an odd pair as cooking and code, and why carry that system past the point where the recipe holds meaning as code? One idea comes from Erst Cassirer. According to his <i>Language and Myth</i>, rational thought evolved from speech when it became understood that signs (linguistic or otherwise) are arbitrary, allowing us to work with them as abstractions. If the words for “stone” and “man” are assonant (as they were in Ancient Greek), we now understand that to be coincidence, not a sign that humans were created from stone. In the mythic stage of cultural development, however, words (and other symbols) had a more complex relationship with their referents. Lightning is a serpent because it is serpentine: metaphors hold a literal truth about to what they refer. The resonance between mythological and rational realms of language is at play in languages like Chef. From the rational point of view, the <i>Hello, World!</i> cake is an odd byproduct of a system designed to do something else. But its humor comes from a mythological view: as if, like executing the FRACTRAN instructions in the math space, baking the actual cake could somehow contain the program it was created from. It is an extension of the excess already inherent in the language itself.</p><p>For more about FRACTRAN, podsnap has a Clojure implementation and a nice intro to the language. Also, there’s a nice explanation on Good Math, Bad Math.<br></p><p>I <a href="../110647356808/interview-with-david-morgan-mar.html">interviewed David Morgan-Mar</a>, creator of Chef for this blog.</p>
+    </div>
+
+
+</div>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/121676565203/vocabulary-oriented-and-behavior-oriented by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:57 GMT -->
+</html>

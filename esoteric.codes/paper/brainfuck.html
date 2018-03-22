@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/paper/brainfuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainfuck</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                brainfuck
+            </h1>
+        </div><div class="post-meta"><time datetime="Spring 2013">Spring 2013</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+
+        <p>
+            <i>Originally published in NMC Media-N, Journal of the New Media Caucus, V.09 N.01 (SPRING 2013)</i>
+        </p>
+
+        <p>Programming languages are perhaps the most direct conduit between human and machine: here our commands translate into machine instructions. Brainfuck, a programming language created in 1993, uses this process of translation to explore the breakdown of communication and expose how computers train us to think. It is an experiential piece rather than a practical tool to create working programs. This paper will explore what brainfuck tells us about our relationship with computers and how programming languages can function as immersive works.</p>
+        <p>Programming languages are abstractions of machine code. Ordinarily, they make these instructions friendly, providing named commands like “print” and allowing the programmer to assign descriptive identifiers to variables. Urban Müller, the designer of brainfuck (ordinarily spelled lower-case), set out to create a tiny but fully-functional language, doing away with any niceties for the programmer. His compiler understands only eight symbols, all punctuation marks, which map directly to assembly commands. Letters and numbers are ignored entirely. The effect is to expose the underlying logic of the code behind the code.</p>
+        <p>In practice, a brainfuck programmer can’t write “x = 1” to assign 1 to x, since “x,” “=,” and “1” have no meaning, nor do the spaces between them. Instead, she must traverse memory manually, using angle brackets to find a location one can think of as “x,” and then populate that memory cell by incrementing the value (initialized to zero) with a single plus sign:</p>
+        <code>+</code>
+        <p>To store the number five, she would do this: </p>
+        <code>+++++</code>
+        <p>While this may seem intuitive, like scratching consecutive lines to keep score in a card game, complexity multiplies quickly. To write the number thirty-six, rather than writing thirty-six plus signs, one can step back and forth between memory cells, incrementing one value repeatedly and thereby producing that number more compactly. The top line below multiplies six by six, but the other lines also arrive at a value of thirty-six using other programmatic tricks:</p>
+        <code>
+            ++++++[&gt;++++++&lt;-]&gt;<br/>
+            ++[&gt;++&lt;+++++++]&gt;<br />
+            ++[&gt;&#8211;&lt;&#8212;&#8212;-]&gt;<br />
+            &#8211;[&gt;++&lt;&#8212;&#8212;-]&gt;<br />
+            &#8211;[&gt;&#8211;&lt;+++++++]&gt;<br />
+            +[-&gt;-[&#8212;&lt;]&gt;-]&gt; [1]
+        </code>
+        <p>Thirty-six is no longer just a number, it is a set of steps to build a number, and, without careful reading, could easily be mistaken for stored text, a set of instructions, or anything else representable in programming.  </p>
+        <p>The simple syntax of brainfuck invoking rambling, bizarre usage is reminiscent of Sol LeWitt’s <em>Incomplete Open Cubes</em> (1974), where a set of very simple instructions, carried out in a straightforward way, leads us on a ludicrous journey. As Rosalind Krauss explains <em>Incomplete Open Cubes</em>, “For what we find is the ‘system’ of compulsion, of the obsessional’s unwavering ritual, with its precision, its neatness, its finicky exactitude, covering over an abyss of irrationality.” [2] Like LeWitt’s Cubes, programming languages are compulsive systems, built on order and precision. Brainfuck allows irrationality to blossom in this place of exactitude by refusing to simplify machine instructions.</p>
+        <p>Programming languages expressing ideas through a list of rules can be thought of in terms of Fluxus event scores as well as in the work of Conceptual artists like LeWitt. Geoff Cox, in <em>Speaking Code</em>, points out that a program is a special kind of score. For Cox, “a computer program undermines the distinction between its function as a score and a performance of the score,” and “programs … do what they say at the moment of saying it.” [3,4] There is no separation between the written code and the performed code. The computer, as performer, interprets in the most literal way. In contrast, some Fluxus event scores are very open-ended. Yoko Ono’s <em>Fly Piece</em> (1963), made up of the single instruction “Fly,”invokes many possible interpretations, blurs the line between performer and audience and raises the possibility that no physical performance is intended. [5] </p>
+        <p>Comparing programming languages – rather than programs – to scores opens up possibilities by posing the programmer as a performer. Languages may lack the ordinal instruction list of a specific program, but they do offer lists of rules to be invoked in any order, thereby allowing for interpretation by the programmer using them.</p>
+        <p>Learning a language is learning how to think in it to command the machine. Most traditional programming languages are intended as flexible tools. Each has a series of overarching metaphors that explain the procedures of the language, whether as objects acted upon through properties and behaviors, or events code reacts to. Kenneth Iverson and Paul Graham argue that linguistic relativity applies to programming languages: they shape the cognitive processes of the user of the language. [6] This construction of a mindview of a language – how it makes us think – is where esolangs like brainfuck express the ideas of their designers. They are experiential pieces, where the programmer, serving simultaneously as performer and audience, understands the work by learning to think within its strange ruleset.</p>
+        <p>Languages are designed to be structured and logical because the machine demands it, not because it comes naturally to us. Over time, the programmer may become a more logical thinker, even as bugs endemic to software remind her she will always fall short. Brainfuck dramatizes this gulf between human and machine: there is nothing in the language itself which is erratic, crazed or even misleading, but it leads to the programmer writing erratic, crazed code. Brainfuck, and languages that follow in its tradition, destabilize the authority of the machine by accentuating our alienation from the thinking it requires from us.</p>
+        <p>“Hello, World” written in brainfuck: </p>
+        <code>&gt;+++++++++[&lt;++++++++&gt;-]&lt;.&gt;+++++++[&lt;++++&gt;-]&lt;+.+++++++..+++.&gt;&gt;&gt;++++++++[&lt;++++&gt;-]</code><br/>
+        <code>&lt;.&gt;&gt;&gt;++++++++++[&lt;+++++++++&gt;-]&lt;&#8212;.&lt;&lt;&lt;&lt;.+++.&#8212;&#8212;.&#8212;&#8212;&#8211;.&gt;&gt;+. [7]</code>
+        <p>Over the last twenty years, hundreds of programming languages have been written as experiments and art pieces, mostly created by programmers and hobbyists. These languages are called esolangs (for “esoteric programming languages”) and many, if not most, are indebted to brainfuck, the most notorious of the esolangs. [8]</p>
+        <p>Malbolge (Ben Olmstead, 1998) is named for the level of Hell reserved for perpetrators of fraud. Like brainfuck, it has only eight instructions. [9] Which instruction is called is determined not by a signifier alone (like the punctuation marks in brainfuck) but also by where it falls in memory. Furthermore, the same value can serve simultaneously as an instruction and as data, and can change (through a complex encryption scheme) after it is run. Each rule in Malbolge is carefully selected to complicate the others, creating a ruleset so unwieldy, no successful program has ever been written by a programmer working by hand. [10]<sup><span style="font-family: 'Verdana';">  </span></sup>A beam search algorithm written by Andrew Cooke, who spent a month coding it, eventually constructed the first Hello, World<i> </i>program, two years after the language first appeared. [11] This code looked at the output of Malbolge programs statistically, with no regard for coherence to the rules of the language. Only by treating the language as irrational could it find a solution. The resulting program did not have the correct capitalization, but, perhaps more fittingly, output:</p>
+        <code>HEllO WORld</code>
+        <p>In my language Entropy (2010), data corrodes as programs run. Unlike brainfuck and Malbolge, it is easy to write code in Entropy, with a familiar syntax borrowed from C and Pascal. [12] However, because its memory is corrosive, programmers have only a short window to get an idea across before their data becomes a mush of random Unicode characters. The programmer is forced to give up on the pursuit of perfection, settling for programs that get the gist of an idea across in the brief time before the program crashes. This often results in crazily written code, carrying the flavor of the language into the coding style. </p>
+        <p>In order to translate the experience of the language to non-programmers, I re-coded the chatbot Eliza in Entropy. [13] Because users so quickly ascribed a personality to the original Eliza when she appeared in 1966, I was curious what personality Eliza would take on when using Entropy data types. The result was Drunk Eliza. She at first closely resembles the classic chatbot, beginning to slur her words as her bank of phrases corrodes, and eventually devolving into nonsense. [14] </p>
+        <p>The uncanny space between human thought and computer logic has fed many strains of new media art, such as in Mez Breeze’s codeworks. Markov Chain works such as Josh Millard’s <em>Garkov</em> give us the most foreign of voices – that of the machine pretending to be human – familiar to us through spam. [15] Glitch art practice lets loose a rogue analog element – often that of a person manipulating code directly – in binary data which the machine strictly interprets in order to display. [16] Hyper-real 3D imagery expresses a similar unease, such as in the too clean spaces in Takeshi Marata’s recent <em>Synthesizers</em> (2012). However, it is not surprising that programmers explored this strange terrain before the Web familiarized the rest of us to it. Esolangs like brainfuck gave these programmers a release from the constraints of traditional communication with the machine.</p>
+        <h3>References</h3>
+        <p>1. “Brainfuck Constants,” Esolangs.org, last modified June 28, 2012, <a title="Brainfuck Constants" href="http://esolangs.org/wiki/Brainfuck_constants">http://esolangs.org/wiki/Brainfuck_constants</a></p>
+        <p>2. Rosalind Krauss, “LeWitt in Progress,” in The Originality of the Avant-Garde and Other Modernist Myths (Cambridge: MIT Press, 1986), 254.</p>
+        <p>3. Geoff Cox, Speaking Code (Cambridge: MIT Press, 2013), 61.</p>
+        <p>4. Cox, Speaking Code, 35.</p>
+        <p>5. Ken Friedman, Owen Smith and Lauren Sawchyn, The Fluxus Performance Workbook (Performance Research e-publication, 2002), <a title="Fluxus Workbook" href="http://www.thing.net/~grist/Id/fluxusworkbook.pdf">http://www.thing.net/~grist/Id/fluxusworkbook.pdf</a>, accessed April 1, 2013, 86.</p>
+        <p>6. Kenneth Iverson, “Notation as a Tool of Thought,” 1979 ACM Awards Lecture, accessed April 1, 2013, documented: <a title="Awards" href="http://awards.acm.org/images/awards/140/articles/9147499.pdf">http://awards.acm.org/images/awards/140/articles/9147499.pdf</a></p>
+        <p>7. “Brainfuck,” Esolangs.org, last modified March 29, 2013, <a title="Esolangs" href="http://esolangs.org/wiki/Brainfuck">http://esolangs.org/wiki/Brainfuck</a></p>
+        <p>8. Ais523. Interview. “Interview with ais523,” Daniel Temkin, last updated February 28, 2011, <a title="Daniel Temkin" href="http://danieltemkin.com/blog/post/Interview-with-ais523.aspx">http://danieltemkin.com/blog/post/Interview-with-ais523.aspx</a></p>
+        <p>9. “Malbolge: Programming From Hell,” Ben Olmstead, archived August 15, 2000, <a title="Web Archive" href="http://web.archive.org/web/20000815230017">http://web.archive.org/web/20000815230017/</a> <a title="Mines" href="../www.mines.edu/students/b/bolmstea/malbolge/index.html">http:/www.mines.edu/students/b/bolmstea/malbolge/</a></p>
+        <p>10. “Introduction to Malbolge,” Ben Olmstead, last updated December 11, 2007, <a title="Lscheffer" href="http://www.lscheffer.com/malbolge.shtml">http://www.lscheffer.com/malbolge.shtml</a></p>
+        <p>11. “malbolge: hello world,” Andre Cooke, accessed March 11, 2013, <a title="Acooke" href="http://www.acooke.org/malbolge.html">http://www.acooke.org/malbolge.html</a></p>
+        <p>12. “Entropy,” Daniel Temkin, last updated June 8, 2012, <a title="Daniel Temkin" href="http://danieltemkin.com/Entropy.aspx">http://danieltemkin.com/Entropy.aspx</a></p>
+        <p>13. Joseph Weitzenbaum, Computer Power and Human Reason: From Judgment to Calculation (New York: W. H. Freeman and Company, 1976)</p>
+        <p>14. “Drunk Eliza,” Daniel Temkin, last updated August 3, 2012, <a title="Daniel Temkin" href="http://danieltemkin.com/DrunkEliza">http://danieltemkin.com/DrunkEliza</a></p>
+        <p>15. Josh Millard, “Garkov,” accessed March 11, 2013, <a title="Josh Millard" href="http://joshmillard.com/garkov/">http://joshmillard.com/garkov/</a></p>
+        <p>16. Hugh Manon and Daniel Temkin, “Notes on Glitch,” World Picture Journal, Issue 6, Winter 2011</p>
+    </div>
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../images/logos/zkm-logo.svg" />
+                <img src="../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../lib/jquery/dist/jquery.js"></script>
+            <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/paper/brainfuck by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:24 GMT -->
+</html>

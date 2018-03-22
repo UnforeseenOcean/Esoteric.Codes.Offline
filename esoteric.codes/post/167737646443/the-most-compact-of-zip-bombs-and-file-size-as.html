@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/167737646443/the-most-compact-of-zip-bombs-and-file-size-as by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Most Compact of Zip Bombs, and File Size as Performance</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                The Most Compact of Zip Bombs, and File Size as Performance
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2017-11-21">2017-11-21</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="495" data-orig-height="288" class="tmblr-full"><img src="../../../78.media.tumblr.com/9451e3dcd3947bcc60f1912f32faba4b/tumblr_inline_ozqp971kWq1qaohdj_500.png" alt="image" data-orig-width="495" data-orig-height="288" width="495" height="288"></figure><p>ZipIt, a project that appeared as part of The Wrong’s “Scripting the Other” pavillion, warns the user:</p><blockquote><p>Before clicking download disable all preventive settings of your browser and now do the same with any anti virus programs running! These steps will help you get the huge potentialities on unzipping the bomb bellow!</p></blockquote><p>When one opens the generated zip file (careful to not actually unzip it), ten folders are revealed inside, labelled 10-1 through 10-10. Each of these holds a set of ten folders: 9-1 through 9-10, to 8, to 7, a countdown leading to the final set of text files, each named zero.txt. All together, there are 10 ^ 10 of these zero files, or 10 billion; each one is 100MB in size, and completely composed of repetitions of the number 0. Expand these to full size and you get 1EB of data: an exabyte, equivalent to 1024 petabytes, where a petabyte is itself 1024 terabytes – enough to fill anyone’s consumer harddrive (in 2017 anyway) with zeros. As promised, the potentialities were revealed to be huge – and all packed into a 29.6K file. <br></p><p>ZipIT is a callback to the classic internet phenomenon of zip bombs. Perhaps the most impressive of the classic zip bombs were the quine zip bombs, which unzip to a state identical to its zip state, which would then unzip, creating an infinite loop of expanding data. The quine (named for analytic philosopher Willard Van Orman Quine) usually refers to a program that prints its own source code to the screen, or recreates it into a new file (here the “running” of that program is the act of unzipping it). Quine zip bombs were known to crash mail servers that attempted to unzip them to scan their contents. Now such files are relatively harmless, as most systems can easily detect zip bombs, transforming what was once a malicious act into something gestural.<br></p><p>
+            Extreme redundancy of data in a lossless compression is what makes zip bombs possible. When Huffman encoding, a common compression algorithm, is applied to a file with the same symbol repeated, maximum redundancy is achieved: we only store the symbol and length.
+            The image at the top of this post (pulled from the website) shows how scattered and seemingly random a wholly uniform set of
+            data can look when compressed it into a tiny .zip.
+
+            <br>
+        </p><p>Using compression and file size as performance dates back at least to 2004, with Cory Arcangel’s Total A##hole Compression, which asks "Why make files smaller, when you can TAC them”? TAC expands files by up to 14 times its original size, seemingly to justify the bandwidth and storage which seemed expansive and underused even thirteen years ago, much as it is now. <br></p><p>That the size of information can be performative itself is perhaps made most clear in the esolang Lenguage. Named for the LEN() function that returns the length of a string in many languages, a Lenguage program uses only the number 1, never 0, meaning only the size of the file holds usable information. That file size is broken down into a binary number; each three digits, read in order, corresponds to a brainfuck command. To write a <i>Hello, World! </i>program in this language, with data stored at the atomic level, would take more matter than exists in the known Universe.</p><p>If your browser or OS is too smart (intrusive) to let you download zipIT, there’s another solution:</p><blockquote><p>And alternately, “Introducing: bombON_a_Stick! - the solution if you prefer to get your copy of the zip bomb via mail! Contact us and we will gladly guide one to your post box!</p></blockquote><p>
+            While the author of zipIT is anonymous*, the pavillion was curated by
+            Noemata http://noemata.net/ (Bjørn Magnhildøen, Ana Buigues, advisor
+            Zsolt Mesterhazy) who work out of Norway (<a href="../167276090838/portrait-of-a-web-server.html">we looked at Portrait of a Web Server, another piece from their pavillion, recently</a>).
+        </p><p><b>* UPDATE: </b>Not entirely anonymous, view source on the zipIT project page for more info</p>
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/167737646443/the-most-compact-of-zip-bombs-and-file-size-as by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:54:24 GMT -->
+</html>

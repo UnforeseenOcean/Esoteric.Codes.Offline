@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/113253944074/vocabulary-oriented-and-behavior-oriented-esolangs by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:52:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary-Oriented and Behavior-Oriented Esolangs</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Vocabulary-Oriented and Behavior-Oriented Esolangs
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-03-10">2015-03-10</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <figure><img src="../../../78.media.tumblr.com/f5e4d4ef45129a6178b6e4858edf4138/tumblr_inline_nkuzubAbwX1qaohdj.png" alt="image"></figure><p>While two people can exchange ideas in ambiguous language, in programming, code is translated to machine language, which has no space for ambiguity, color or connotation. Even esolangs that thrive on ambiguity ultimately translate into some kind of (strictly denotative) machine code at the bottom. As part of this translation, there’s usually a step where an abstract syntax tree (or similar data structure) is generated, to make sense of the program. Let’s say a program has this line of code:</p><blockquote><div>print(4 + 5 * 3);</div></blockquote><p>This is the “concrete syntax” of the language – the actual words a programmer might type. It also contains the classic example of ambiguity: whether the addition or multiplication operates first. This ambiguity is resolved in the construction of an abstract syntax tree (AST), a data structure which rearranges tokens (base units of meaning) of the code, according to the rules of the language, taking in account order of operations (in nearly all languages, multiplication is “lower” than addition, so executed first): </p><figure><img src="../../../78.media.tumblr.com/e80798cfd92d5652c346b55a1c11e580/tumblr_inline_nkvav66RHl1qaohdj.png" alt="image"></figure><p>Now we can see that 5 * 3 is resolved first, added to 4, sent as a parameter to the print command. We can think of the abstract syntax as the logic of the program stripped of its symbology.&nbsp;</p><p>Most programming languages strive to make its behavior as clear as possible, so transparent concrete symbols are selected. But esolangs often complicate this. For instance, the language ActiveEmoji, which allows one to write Ruby using emoji:</p><figure><img src="../../../78.media.tumblr.com/0305346567df7af811b22cdc58b665c4/tumblr_inline_nkvcllSmCm1qaohdj.png" alt="image"></figure><p>Underneath, the language is straight Ruby. Since it is implemented as a direct mapping from one vocabulary set to another, we might think of ActiveEmoji as an esolexicon rather than an esolang: only the vocabulary is “esoteric.” Or&nbsp;LOLCODE, the much-maligned esolang which is a straight procedural language behind lolcat phrases (and perhaps would have been more successful if implemented the way ActiveEmoji was: as a direct substitution of symbols). Acme:Bleach&nbsp;is&nbsp;a set of vocabulary for Perl allowing one to program Perl using only whitespace – this is also simply a mapping (compare to the Whitespace language, for instance).<br></p><p>In contrast are the behavior-oriented esolangs. such as Whenever by David Morgan-Mar (<a href="../110647356808/interview-with-david-morgan-mar.html">discussed recently</a>). In Whenever, the programmer has little control over the order in which lines of code are executed. Or Fractran, where commands are encoded as fractions. Each of these have bizarre logic. Generally speaking, this type of esolang is more interesting to esolangers; they offer something more than a strange face on the same old code. They are also less accessible to non-programmers: it’s easy to get what is special about the visual language Piet (also by Morgan-Mar), Whenever takes an investment of thought and a comfort with programming to understand (and it’s a lot more interesting if you’ve actually played with it!).</p><p>That said, the complexity of vocabulary-oriented languages can easily be extended beyond what is done with the esolexicon / straight substitution examples above. I called Whenever a “behavior-oriented esolang” as opposed to “logic-oriented” because languages like Piet show the potential for languages designed around vocabulary to use symbology to introduce logic of its own, or to play on aspects of human communication that are otherwise overlooked in programming.</p><figure><img src="../../../78.media.tumblr.com/74c4eab9b3f640616669e3c508fe5483/tumblr_inline_nkyahbUEXr1qaohdj.png" alt="image"></figure><p><i>Hello World</i>&nbsp;by Thomas Schoch for Piet (2002)</p><p>In Piet, the color of pixels in an image determine commands. And it is not the color itself, but the change in color (both hue and lightness have meaning). Furthermore, code flows in multiple directions, depending on syntactic markers (building on the Befunge language). Piet is a great example of how complexity at the concrete language level – and the possibility for complexity of signification – can make for a fascinating language, even if behind that set of symbols is a simple, stack-based procedural language. Piet’s image-based code creates an opening for the ambiguity of imagery – the ambiguity of language – which can’t persist at the AST level. Images function semiotically and affectively, and in the case of Piet, each image carries the additional meaning of the code it will translate into (acknowledged in the imagery of some of the best Piet programs).<br></p><p>Other vocab-oriented languages comment on the use of symbols themselves, such as ‘Alb (<a href="../107894367305/interview-with-ramsey-nasser.html">discussed here</a>), which uses Arabic, exposing how ingrained is the default of Western-dominated language in programming. Shakespeare, a language in the form of stage directions and dialogue, is a powerful early example, making code ridiculous (while perhaps building on the intertwined histories of encryption and computing). My&nbsp;Velato and Light Pattern&nbsp;build on Piet’s example, using music and photography symbiotically with code.</p><p>These strategies give vocabulary-oriented languages their power: ambiguity at the concrete level, critique of signification, and tension between the purely denotative below with the gesture and affect at the surface.</p>  </div>
+
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/113253944074/vocabulary-oriented-and-behavior-oriented-esolangs by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:52:12 GMT -->
+</html>

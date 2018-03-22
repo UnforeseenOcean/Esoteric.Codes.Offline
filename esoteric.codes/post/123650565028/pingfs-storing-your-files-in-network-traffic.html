@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/123650565028/pingfs-storing-your-files-in-network-traffic by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PingFS: storing your files in network traffic </title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                PingFS: storing your files in network traffic
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-07-09">2015-07-09</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <figure data-orig-width="533" data-orig-height="258" class="tmblr-full"><img src="../../../78.media.tumblr.com/39717a1b2d3ecc12df20e66a8e37f016/tumblr_inline_nr77zqmJJs1qaohdj_500.jpg" alt="image" data-orig-width="533" data-orig-height="258" width="500" height="242"></figure><p>If cloud storage is virtual disk space spanning a “cloud” of physical servers across the network, PingFS’s data storage is in the lightening that passes through that cloud. PingFS has storage in no static location – its data is always in transition somewhere else. As a result, little physical drive space is needed – it is traded off for a clogged network.</p><p>How does this work? Through ping, the simple utility used to test if a machine is up and accessible to us. We ping an IP address (send an ICMP echo request), and it sends back a response. However, you can also attach a snippet of data (a payload), which is sent back verbatim by the receiver. This is used, for instance, to track when the request went out, in order to calculate the round trip.</p><p>
+            PingFS breaks files apart and pings parts of them back and forth across the Internet. It is a kind of juggling, where no one machine holds the data for more than a moment; when the message is received, it is immediately tossed back into the ether and cleared from local storage. As Kelson,&nbsp;its original designer puts it,&nbsp;“PingFS is like holding up the clouds by swatting the rain back up.”
+
+        </p><p>Kelson described PingFS as growing out of a conversation with friends about terrible ideas implemented well (he mentions Phuby&nbsp;and&nbsp;the text-while-driving-helper&nbsp;as inspiration).&nbsp;</p><blockquote><p>“We had recently discussed covert channels (ie, surreptitiously communicating with ICMP packets) and disk redundancy (inspired by https://www.backblaze.com/blog/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/), which sort of merged into a terrible idea.”</p></blockquote><p>
+            While PingFS is written in Python, another implementation was written in Haskell by Erik Ekman. Erik was unaware of Kelson’s implementation, but both came up with the same name (“I guess they also think it has a better ring to it than IcmpFs :)” says Erik). His project grew from an experiment
+
+            building a DNS tunnel through ICMP, as a clever ploy to avoid fees while in school. He is currently building a version in C, on github here.
+        </p><p>RELATED: Another way to offset your data storage – save it in url shorteners&nbsp;</p><p>UPDATE: added info on Erik’s version</p>
+    </div>
+
+</div>
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/123650565028/pingfs-storing-your-files-in-network-traffic by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:53:41 GMT -->
+</html>

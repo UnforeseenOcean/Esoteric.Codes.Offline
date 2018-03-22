@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/130618094278/interview-with-eric-s-raymond by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview with Eric S. Raymond</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Interview with Eric S. Raymond
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-10-06">2015-10-06</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <p><i>Eric S. Raymond is an imposing figure in the history of open-source code. His essay (and book)&nbsp;<i>The Cathedral and the Bazaar&nbsp;expanded the model for open-source development based on his experience creating fetchmail. ESR, as he’s known, revived the important early esolang INTERCAL as C-INTERCAL, making it available to a new generation of programmers.</i></i></p><p><i><br></i></p><p>
+            <b>
+                <b>» </b>
+
+                INTERCAL seems to have an odd place in esolang
+                history. Often called the first esolang, it was written in the early ‘70s
+                and revived by you in I believe 1990, a few years before FALSE,
+                brainfuck, and Befunge appeared.
+            </b>
+        </p><p>
+            That is correct. It was written in 1972, and I
+            reimplemented it in 1990.
+        </p><p>
+            <b>
+                »&nbsp;Do you remember how and when you first came across
+                INTERCAL and what your impression was? Did you spend much time coding
+                in the original language or did you need to create C-INTERCAL to use
+                it? Was there much communication with Don Woods and Jim Lyon?
+            </b>
+        </p><p>
+            I first encountered the manual for INTERCAL in 1977 or
+            thenabouts. &nbsp;Read it and laughed pretty
+            hard, but at that time it didn’t occur to me to try to implement it. I didn’t
+            teach myself the required skills until about six years later.
+        </p><p>
+            I’ve never spent *any* significant amount of time coding
+            in INTERCAL, aside from minor fixes to test cases. I just write the compiler,
+            I’m not twisted enough to try to use the language.&nbsp;
+        </p><p>
+            I let Don Woods and Jim Lyon know what I was doing, but
+            that was about it as far as communication went. They didn’t seem that
+            interested in their early progeny.
+        </p><p><b>»&nbsp;What was the response like to C-INTERCAL? &nbsp;</b></p><p>
+            Laughter.
+            Incredulity. &nbsp;More laughter. &nbsp;And then people started sending patches.
+        </p><p>
+            <b>
+                »&nbsp;What was it like re-interpreting and extending the
+                original language? Are there concepts or behaviors of the
+                original that adapted particularly well or poorly to computing 18 years
+                later? It seems that you felt free to add some of your own wonderfully
+                ludicrous features (accepting Latin commands, for instance).
+            </b>
+        </p><p>
+            INTERCAL is such a bizarre design that I can’t say any of
+            it “adapted” to anything. If anything, eighteen years of progress
+            made it a poorer fit to the technology of the day - it had some legacies of the
+            batch mainframe environment it was designed in that I had to reshape a little.&nbsp;
+        </p><p>
+            It assumed an EBCDIC character set rather than ASCII, for
+            one thing, and INTERCAL statemant syntax was really intended for punched-card
+            rows rather than lines on a terminal. So I had to modify it, which I thought
+            was OK - I viewed it as a kind of hacker folk art, with my own hands being
+            neither the first nor the last to reshape it.
+        </p><p>
+            Thus, yes, I added new features. &nbsp;As did others - the support for Latin
+            keywords I think was [ais523]’s work. [<b>Ed NOTE: ais523&nbsp;<a href="../84454956003/interview-with-ais523.html">was interviewed here</a></b>]
+        </p><p>
+            <b>
+
+                »
+
+                Was the COME FROM command one of your additions?
+                It is one of my favorites, as the simple gesture of turning GOTO on
+                its head adds such complexity and weirdness to program flow. Are there
+                any particularly unusual or clever uses of COME FROM you’ve seen?&nbsp;
+            </b>
+        </p><p>
+            Yes, the idea of adding COME FROM to INTERCAL and the
+            implementation were both mine, though the original idea goes back to 
+                a 1973
+                satire
+             on Dijkstra’s “Go To Statement Considered Harmful.”
+        </p><p>
+            I believe the most frightening single piece of code I’ve
+            ever seen is the implementation of Conway’s Game of Life in INTERCAL using a
+            double nested COME FROM loop. &nbsp;It’s in
+            the distribution’s examples directory, along with a pretty large percentage of
+            all the INTERCAL code ever written.
+        </p><p>
+            <b>
+                »&nbsp;In discussing why esolangs emerged in the early
+                90s, Chris Pressey and Wouter van Oortmerssen commented on the low bar
+                between hobbyist code and “professional” software at that
+                time as encouraging people to explore the creative potential of computers – also
+                of the close-knit community of Amiga coders. Was this similar to the
+                UNIX world (and does this fit your impression of computing in that
+                era)?
+            </b>
+        </p><p>
+            I don’t know anything about the Amiga community. I do
+            know that INTERCAL fit right in to a tradition of elaborate technical parodies
+            and hoaxes that was already rather central to the UNIX- and Internet-centered
+            hacker culture I knew by 1990. It’s the
+            same impulse that produces parody RFCs to this day.
+        </p><p><b>» Could you give some examples of other “elaborate technical parodies and hoaxes” that stand out to you or that were influential on your work? What computer folk art is significant to you?</b> </p><p>If I had to name one classic in the genre it would be RFC 1149: “A Standard for the Transmission of IP Datagrams on Avian Carriers”.</p><p>It’s representative of a long and continuing tradition of joke RFCs, traditionally issuing on April 1st each year. &nbsp;Hackers greatly cherish these.</p><p>
+            <b>
+
+                »
+
+                Have you connected with others experimenting with
+                esolanguages? Do you remember when you became aware of brainfuck,
+                Befunge, etc?
+            </b>&nbsp;
+        </p><p>
+            I only became aware of these in the late 1990s, at which
+            point I was (alas) too busy being Mr. Famous Guy to play with them much.
+        </p><p>
+            <b>
+
+                »
+
+                Are there any favorite features of INTERCAL-72 or
+                C-INTERCAL we haven’t discussed yet that you’d like to mention?
+            </b>&nbsp;
+        </p><p>
+            ABSTAIN. &nbsp;ABSTAIN
+            is beautifully weird. &nbsp;Every language
+            designer should study it as an example of what not to do.
+        </p><p>
+            <b>
+
+                »
+
+                Were you
+                involved with any of the derivative languages (TriINTERCAL, etc) or the discussions around the languages on
+                Usenet?
+            </b>&nbsp;
+        </p><p>
+            I was watching from close by when Louis Howell
+            implemented Tri-Intercal, otherwise I wasn’t involved with any of
+            the derivatives.
+        </p><p>
+            <b>
+                »
+
+                Any tips
+                for hobbyists first messing around with language design (esoteric or otherwise)?
+            </b>&nbsp;<br>
+        </p><p>
+            Yes. &nbsp;Start with a
+            domain-specific language - I’ve written several of which the best known is
+            probably reposurgeon. General-purpose languages are hard, so practice with DSLs
+            first. They’re appealingly concrete; you can know when you’re done.
+        </p>
+    </div>
+</div>
+
+
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/130618094278/interview-with-eric-s-raymond by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:50:46 GMT -->
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/126994753531/vocabulary-based-esolangs-isea-talk-notes by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary-based Esolangs</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Vocabulary-based Esolangs (ISEA Talk notes)
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2015-08-18">2015-08-18</time><br></div>
+    </header> <!--OO TS--><div class="text post-content">
+        <p><b>Sunday morning I presented an intro to vocabulary-based esolangs to #ISEA2015. Here are links and notes.</b><br></p><p>For those brand new to esolangs,<b> brainfuck</b> is an important language to understand, as it was the catalyst for so much of the exploration of logic and language to follow. Inspired by <a href="../122942498363/interview-with-wouter-van-oortmerssen.html">Wouter Van Oortmerssen</a>’s <b>FALSE</b> language, Urban Müller created the smallest compiler he could: only 240 bytes. To do this, he designed the Turing Complete language brainfuck, which has only 8 characters, all punctuation.</p><p>To write something like:</p><blockquote><p>let x = 3</p></blockquote><p>in brainfuck, we can’t use words such as “let,” “x” or “3,” none of which are meaningful in the language. Instead, we move the pointer to a place in memory we can think of as <i>x</i> and add three to it like so:</p><blockquote><p>+++</p></blockquote><p>It gets more complex when we get to higher numbers. If we want to begin a <i>Hello, World</i> program, we need the letter <i>H</i>, which happens to have an ASCII value of 72. We can get to 72 with 72 + signs, or more compactly with one of these:</p><blockquote><p>++++++++[&gt;+++++++++&lt;-]&gt; <br>-[&gt;+&lt;——-]&gt;-</p></blockquote><p>The top line above is essentially multiplication, 8 * 9. The second takes a more complex path, looping down from zero and wrapping. More of these can be seen on esolang.org’s brainfuck constants page. The code above can be tried on this brainfuck interpreter. A longer exploration of these ideas can be found&nbsp;in my paper on brainfuck for Media-N Journal.</p><p><br></p><p>We can think of brainfuck as a&nbsp;<i>logic-based esolang</i>, in that what makes it interesting is primarily its set of rules; even though its vocabulary (the punctuation) is unusual, the alienating experience one gets from coding in the language is due to its logic.</p><p>We can see this more clearly when we look at the language <b>Ook!</b> by David Morgan-Mar, created 8 years later. Ook! is a translation of brainfuck into Orangutan words. Apparently, orangutans communicate by using the word “ook” over and over, using different emphasis, here expressed through punctuation. </p><p>It’s important to note that traditional programming languages don’t emphasize the code as a text. We see the logic behind the code, the words are mostly immaterial – if we pay attention to them, this is usually a problem. We can see “print” or “printf” or “cout” or “asdsadsa” and pay attention to its usage and meaning, what it does and how it’s used. The signifier itself only holds a denotative meaning, there is no complexity – we don’t decide between “print” vs “display” to make a slightly different point; we use the one which is valid in the language.&nbsp;</p><p>But Ook! is a different language from brainfuck, despite having the same logic. With brainfuck, one quickly gets used to seeing angle brackets and square brackets and reading them – the difficulty in brainfuck is how quickly the complexity this code develops. The Hello, World! program in Ook! follows identical logic to the program in brainfuck, but the resulting code is more opaque. It begins with:</p><blockquote><p>Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook! Ook! Ook? Ook! Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook! Ook! Ook? Ook! Ook? Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook! Ook!</p></blockquote><p>Even a simple Ook! program is impenetrable in a way that brainfuck’s programs are not: one can think in brainfuck, it is an interesting challenge. Ook!’s bizarre method of encoding brainfuck creates a greater distance between the concrete syntax and abstract syntax, making the code as text even more visible. </p><p>Ook! was the first brainfuck knock-off, but hardly the last. There are currently 39, listed here. There are also a hundred or so derivatives.</p><p>But brainfuck is not the only language which has simple “find-and-replace” equivalents. ArnoldC is a joke language that uses Schwarzenegger catchphrases. HeartForth is one of (eight or so now?) emoji languages. While HeartForth is the least annoying of these (I like it because it’s built on FORTH, a great oddball language, also historically important for esolangs – also because it has the most hearts!). ArnoldC and HeartForth add little to the conversation, and such languages create the impression that esolangs are only interesting if they have systems of logic themselves, as opposed to intervening only at the vocabulary level. However, there are other languages which show vocabulary-based esolangs can be of interest as well.</p><p><br></p><p><b>VerboseFuck</b> is (yet) another brainfuck equivalent. It has each brainfuck command expanded into a painfully over-explained line of code. Instead of using a single plus sign to increment, VerboseFuck uses this:</p><blockquote>
+            <p>
+
+                math.equation(deref(pointer) = (deref(pointer) + byte(1)):binaryand:byte(255));
+
+                <br>
+            </p>
+        </blockquote><p>VerboseFuck implies choices it does not offer. The above line increments the byte referenced by the pointer by one. If we want to add three instead of one, we can’t change byte(1) to byte(3); instead, the entire line has to be replicated twice more. The wonderfully redundant math.equation() is not a command to evaluate an expression, anymore than byte(1) is an expression containing the number 1. None of these words or phrases have any meaning on their own, they are like phonemes which only make sense in this language when they’re combined in exactly the complete line above. More on <a href="../84838361073/verbosefuck.html">VerboseFuck</a> here.</p><figure class="tmblr-embed tmblr-full"><iframe src="https://player.vimeo.com/video/12059874?title=0&amp;byline=0&amp;portrait=0" title="bodyfuck - copy" width="500" height="331" frameborder="0"></iframe></figure><p><a href="../124835785498/bodyfuck-gestural-code.html"><b>Bodyfuck</b> was discussed a few posts back</a> – a development environment for brainfuck created in part to draw our attention to the act of programming. The gestures are the code.</p><p><b>’alb </b>by Ramsey Nasser is a LISP designed as a first programming language for native Arabic speakers. The difficulties Ramsey ran into in creating the language helped expose the biases of tools and libraries unable to process non-Western alphabets. <a href="../107894367305/interview-with-ramsey-nasser.html">Discussed in an interview with Nasser here</a>.</p><p><b>Piet</b><i>&nbsp;</i>is a Forth-like stack-based language whose intervention is again in the space between concrete and abstract syntax. A non-textual language, its commands are encoded in the change of hue and brightness between codels (blocks of color). The idea of 2D code was inspired by Befunge.&nbsp;<br></p><p>The early Piet programs have a resemblance to algorithmic art, especically that of the early (1960′s) algorists. Here is a Piet Hello World:</p><figure data-orig-width="600" data-orig-height="580" class="tmblr-full"><img src="../../../78.media.tumblr.com/774d8a30f1671273b500c6f3c2bd623c/tumblr_inline_nt97k6DRHB1qaohdj_500.png" data-orig-width="600" data-orig-height="580" alt="image" width="500" height="483"></figure><p>And a painting by Hiroshi Kawano, a generative work using Markov Chains:</p><figure data-orig-width="800" data-orig-height="1072" class="tmblr-full"><img src="../../../78.media.tumblr.com/463b7acd9329a60cd405ad1c54f764f2/tumblr_inline_nt97maPruw1qaohdj_500.jpg" data-orig-width="800" data-orig-height="1072" alt="image" width="500" height="670"></figure><p>Where the Kawano piece was generated by a piece of software (then painted by Kawano), the Piet Hello World was not generated by software but by the programmer. The rules of the language run on human programmers, not on a machine. </p><p>Since programmers design these, individual taste and style can become apparent, such as in Thomas Scoch’s pieces, including the Hello World appearing on the cover of Cox and McLean’s&nbsp;<i>Speaking Code</i>. He also mimicked Mondrian – perhaps it is not a surprise that Kawano was similarly inspired by Mondrian’s work.</p><figure data-orig-width="417" data-orig-height="312" class="tmblr-full"><img src="../../../78.media.tumblr.com/a0632af8febba5d2777292b831dcee56/tumblr_inline_nt97t6KdFo1qaohdj_500.png" data-orig-width="417" data-orig-height="312" alt="image" width="417" height="312"></figure><p>Richard Mitton’s Pi program is a remarkable piece; it calculates Pi using a radius (the red line at the left side of the image) and the area of a circle. Here, the circle image is the circle in code  – the signifier is flattened into what it represents. What this means is that the larger the program is drawn (and so the less pixelated a circle), the more accurate a Pi program results.</p><p>The Pi program was of particular importance for me when I designed Light Pattern, which uses photographs as code. In Light Pattern, I wanted to encourage code whose text (the images) and performance (as a running program) were related. In my piece Three Lamp Events, I took the Fluxus event score by George Brecht and created a program to print his words to the screen.</p><figure class="tmblr-embed tmblr-full"><iframe src="https://player.vimeo.com/video/123002470?title=0&amp;byline=0&amp;portrait=0" title="Light Pattern: Three Lamp Events with titles" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="500" height="281" frameborder="0"></iframe></figure><p>Brecht’s pieces blur art and life, turning ordinary events into performance. His Three Lamp Events is the turning on and off (and on again) of a lamp. To write the code in Light Pattern, I used images of three lamps, one with a red bulb, green, and blue, to control the dominant color of the frame. Then I shot the program, turning on and off the lamps to write the script for the performance – using the performance to write the score instead of the other way around.</p><p>While the puzzle logic of languages like brainfuck, Malbolge, and Unlambda may get much of the esolang glory, intervening at the vocabulary level can explore the space between person and machine in a compelling way.</p>
+    </div>
+
+
+
+</div>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/126994753531/vocabulary-based-esolangs-isea-talk-notes by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:51:52 GMT -->
+</html>

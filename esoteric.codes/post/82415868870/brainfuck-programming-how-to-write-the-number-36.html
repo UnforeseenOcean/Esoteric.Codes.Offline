@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:51503/post/82415868870/brainfuck-programming-how-to-write-the-number-36 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:52:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainfuck Programming: How to write the number 36</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../../css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <img src="../../images/esotericheader.gif" width="128" height="128" class="header-image" />
+        <div class="navbar-header">
+            <div class="logo-header">
+                <a href="../../index.html" class="navbar-brand">ESOTERIC.CODES</a><br />
+                <span class="small-header">Platforms, Systems, and Languages that Break from the Norms of Computing</span>
+            </div>
+        </div>
+    </nav>
+        
+
+<div id="postContent" class="container body-content">
+    <header class="post-header">
+        <div class="header-block">
+            <h1 class="post-title">
+                Brainfuck Programming: How to write the number 36
+
+            </h1>
+        </div><div class="post-meta"><time datetime="2014-04-11">2014-04-11</time><br></div>
+    </header> <!--OO TS--><div class="text post-content"> <p>In some languages, if you want to assign the number 10 to the variable x, you might write something like:</p><blockquote><p><strong>x = 10</strong></p></blockquote><p>This doesn’t work in brainfuck, as “<strong>x</strong>”, “<strong>10</strong>”, “<strong>=</strong>”, and the spaces between them are all ignored, they’re not part of brainfuck’s vocabulary. And there’s no special punctuation mark that stands for ten. What was once a given, a constant, now requires a programmatic strategy, and one with stylistic concerns. I can make an easy 36 or a clever 36 or a truly brainfucky 36 that’s short, elegant, and a challenge for anyone else to understand.</p><p>Let’s look at examples to make this more clear:</p><p>The easy way:</p><blockquote><p><strong>++++++<strong>++++++</strong><strong>++++++</strong><strong>++++++</strong><strong>++++++</strong><strong>++++++</strong></strong></p></blockquote><p>When you start a brainfuck program, the memory space is all full of zeroes. Instead of <strong>x</strong>, there’s a byte you can think of as <strong>x</strong> and which you can get to by moving back and forth (you do that with <strong>&gt;</strong> and <strong>&lt;</strong> ). Once we’re at a place in memory we like, we can simply write out&nbsp;36 plus signs, and there we have it.</p><p><strong>Version 2:</strong></p><blockquote><p><strong>++++++[&gt;++++++&lt;-]&gt;</strong></p></blockquote><p>This is multiplying six by six. Here’s how it works:</p><p><img alt="image" src="../../../78.media.tumblr.com/cbb161b29809eacaf81af7c5d06930e9/tumblr_inline_n3vuhdvOWW1qaohdj.png"></p><p><span>A loop begins with <strong>[</strong> and ends with <strong>]</strong> and when the byte referred to just before the loop becomes zero, it ends. So we add six, jump to the right, add six, jump to the left, subtract one, then do this again and again until the left number counts down to zero, leaving us with six plus-signs executed six times (6 x 6) in the right number.&nbsp;</span></p><p>However, there are other, more clever ways to get to 36.&nbsp;</p><p>A byte can only hold a number from zero to 255. So another way of writing 36 is with 256 + 36 plus signs:&nbsp;</p><blockquote><p><strong>++++++++++<strong>++++++++++<strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>++++++++++</strong></strong><strong>++++++++++<strong>+++++++++++++++++++++++++<strong>++++++<strong>++++++</strong><strong>++++++</strong><strong>++++++</strong><strong>++++++</strong><strong>++++++<br></strong></strong></strong></strong></strong></strong></p></blockquote><p>This is called wrapping. You could keep going and add any multiple of 256 to this and get to the same place.</p><p>But this is just spinning the odometer. Things get more interesting when we use this technique in a loop:</p><p><img alt="image" src="../../../78.media.tumblr.com/9941dae18d6898d948f98f15e95e32f1/tumblr_inline_n3vux9I0rn1qaohdj.png"></p><p><span>Here, we add 2, move to the right and make that 2 as well. Then we move back to the left and add 7, and back to the right to add 2. We do this until the left number is evenly divisible by 256, which happens when we hit 1024. 7 * 146 + 2 = 1024. This means we’ve gone round the loop 146 times. 146 * 2 is 292. 292 - 256 = 36. So we’ve passed zero only once in the right variable, leaving us with the remainder of 36.&nbsp;</span></p><p><span>In Part 2, we’ll look at nested loops. In the mean time, there’s a fucking huge&nbsp;</span>list of brainfuck constants.</p>  
+    
+    
+    <p><b>Wrapping</b></p><p>In most brainfuck implementations, a memory cell is a single unsigned byte, meaning it holds a single whole number between 0 and 255. We can’t store numbers like 258 or -20 or 0.5. So what happens when we subtract 1 from 0? It wraps around from the bottom to the top, giving us the maximum value of 255.</p><p>You can try this for yourself with in the&nbsp;brainfuck visualizer, entering the program of a single minus sign in the grey box, and hitting Run:</p><figure data-orig-width="205" data-orig-height="203"><img src="../../../78.media.tumblr.com/5f2ed1873e2ad0c778687a6a3bb562bb/tumblr_inline_ojqjhdKudB1qaohdj_250.png" alt="image" data-orig-width="205" data-orig-height="203" width="205" height="203"></figure><p>The boxes at the top are a set of memory cells, each initialized to zero. At the start of the program, we’re pointing to the first memory cell, so the minus sign subtracts one from it. With two consecutive minus signs, we’d get 254, and so on.</p><p><b>Subtracting from the left, adding to the right</b></p><p>Now we’re ready to try counting to 36, using wrapping. Here is a program, pulled from esolang.org’s list of brainfuck constants a fantastic resource where esoprogrammers have shared algorithms to reach each constant:<br></p><blockquote><p>–[&gt;–&lt;+++++++]&gt;</p></blockquote><p>This follows a common two-cell strategy:</p><p>1) Give a starting number to the left cell</p><p>2) Loop, adding/subtracting from the left and add to the right, until the left is zero and the right gives us the value we seek.</p><p>You can run this program in the brainfuck visualizer, or if you’re using a brainfuck interpreter that doesn’t display memory, you can add a period to the end of the program to print the final value. If the program is successful, it will&nbsp;print the ASCII symbol for the value 36, which happens to be:</p><blockquote><p>$</p></blockquote><p><b>The program in detail</b></p><figure data-orig-width="364" data-orig-height="182" class="tmblr-full"><img src="../../../78.media.tumblr.com/725feb320634b49a7349f22c6a0f0eba/tumblr_inline_ojqjehl6CM1qaohdj_400.png" alt="image" data-orig-width="364" data-orig-height="182" width="364" height="182"></figure><p>It begins with two minus signs:</p><blockquote><p>–</p></blockquote><p>This counts down by two (0 - 2 = 254) in the first memory cell, giving us:</p><p>[254][0]<br></p><p>254 is our starting point going into the loop.</p><blockquote><p>[&gt;–</p></blockquote><p>As we loop, we move to the right and subtract two. The first time through, this gives us:</p><p>		[254][254]</p><blockquote><p>&lt;+++++++	</p></blockquote><p>Then, still in the loop, we move to the left (back into the first cell) and add 7. The first time through, 254 + 7 goes past the zero, landing on 5:</p><p>		[5][254]</p><blockquote><p>]	</p></blockquote><p>When we hit this closing bracket, we’re still in the first memory cell, so this is the cell that matters for the loop – when it hits zero, the loop will end:</p><p>
+            [12][252]&nbsp;<br>[19][250]<br>[26][248]<br>…<br>[250][184]&nbsp;
+
+            (when we pass 255, we wrap)
+
+            <br>[1][182]&nbsp;<br>[8][180]<br>…<br>[0][36]
+        </p><p>How many iterations did it take to get there? We can solve for the right memory cell by finding the first n satisfying (254 + 7n) mod 256 = 0. Or, if we think the number of iterations is less than 256, we can just add a third memory cell and increment it each time by adding &gt;+&lt; (move right, add one, move left):</p><blockquote><p>–[&gt;&gt;+&lt;–&lt;+++++++]&gt;</p></blockquote><p>This gives us:</p><p>[0][36][110]</p><p>With 110 iterations, the value of the second cell (-2n) is -220. Since there are no negative numbers, we get 256 - 220, or 36. Make sense?</p><p><b>Ok but why???</b></p><p>Fair question. While this example takes longer to run than the examples in Part 1, brainfuck is often written as concisely as possible – this is a stylistic concern reflecting the minimalism of the language itself. Finding the most obscure way to write a brainfuck algorithm, especially in the fewest number of commands, is a fun challenge of working in this crazy language. Also, while in this case our code takes far longer to run than the counting / multiplying examples in Part 1, there are cases when jumping down is faster (as we saw in our single command program to get to 255), so this program can serve as a template to reach other constants.</p><p>In Part 3, we’ll look at how these algorithms are discovered, starting with an even more complex (and shorter) approach to the constant 36.</p>
+    </div>
+
+
+
+
+
+</div>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                Supported by
+                <img src="../../images/logos/zkm-logo.svg" />
+                <img src="../../images/logos/CC_logo_hires.jpg" height="30" width="156" />
+                <img src="../../images/logos/aw_logo_credit.jpg" height="50" />
+            </footer>
+        </div>
+
+        
+            <script src="../../lib/jquery/dist/jquery.js"></script>
+            <script src="../../lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="../../js/sitedaa0.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA"></script>
+        
+        
+
+        
+</body>
+
+<!-- Mirrored from localhost:51503/post/82415868870/brainfuck-programming-how-to-write-the-number-36 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Mar 2018 15:52:49 GMT -->
+</html>
